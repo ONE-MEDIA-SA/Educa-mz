@@ -1,4 +1,4 @@
-package com.app.educa.ui.home
+package com.app.educa.ui.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
