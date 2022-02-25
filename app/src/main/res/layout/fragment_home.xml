@@ -17,22 +17,25 @@ tools:context=".ui.view.HomeFragment">
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageView
+        <com.google.android.material.imageview.ShapeableImageView
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="380dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/bg" />
+            app:shapeAppearance="@style/circleImageViewLeft"
+            android:src="@drawable/bg"
+            />
 
         <com.google.android.material.card.MaterialCardView
             style="@style/CustomCardViewStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minHeight="300dp"
             android:layout_marginStart="10dp"
             android:layout_marginBottom="5dp"
             android:layout_marginTop="160dp"
             android:clipToPadding="true"
-            app:cardElevation="3dp">
+            app:cardPreventCornerOverlap="false"
+            android:padding="0dp"
+            app:cardElevation="0dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -71,7 +74,7 @@ tools:context=".ui.view.HomeFragment">
                         style="?attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Navegar"
+                        android:text="ver mais"
                         android:textAlignment="textEnd"
                         android:textAllCaps="false"
                         android:textColor="?android:attr/textColorSecondary"
@@ -100,6 +103,76 @@ tools:context=".ui.view.HomeFragment">
         </com.google.android.material.card.MaterialCardView>
 
     </RelativeLayout>
+
+    <com.google.android.material.card.MaterialCardView
+        style="@style/CustomCardViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="15dp"
+        android:clipToPadding="true"
+        app:cardPreventCornerOverlap="false"
+        app:cardElevation="3dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Esta dificil estudar?"
+                        android:textAppearance="?attr/textAppearanceHeadline6"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Escolha uma disciplina para estudar" />
+                </LinearLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    style="?attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Navegar"
+                    android:textAlignment="textEnd"
+                    android:textAllCaps="false"
+                    android:textColor="?android:attr/textColorSecondary"
+                    android:textSize="14sp"  />                     />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="10dp">
+
+                <include layout="@layout/item_study" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
 
 </LinearLayout>
 
