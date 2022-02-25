@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="200dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:maxHeight="250dp"
     app:cardCornerRadius="20dp"
+    android:layout_marginStart="8dp"
     android:layout_height="260dp">
     <RelativeLayout
         android:layout_width="match_parent"
@@ -15,19 +17,34 @@
             android:scaleType="centerCrop"
             android:src="@drawable/img_video"/>
 
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <RelativeLayout
             android:layout_alignParentBottom="true"
+            android:layout_width="70dp"
             android:layout_alignParentEnd="true"
-            android:backgroundTint="@color/purple_500"
-            app:tint="@color/white"
-            android:layout_margin="10dp"
-            app:fabSize="mini"
-            app:borderWidth="0dp"
-            app:srcCompat="@drawable/ic_play_icon"
-            />
+            android:layout_height="70dp">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/treeNine"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_centerInParent="true"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/pulse"
+                app:lottie_speed="2"
+                />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:backgroundTint="@color/purple_500"
+                app:borderWidth="0dp"
+                app:fabSize="mini"
+                app:srcCompat="@drawable/ic_play_icon"
+                app:tint="@color/white" />
+
+        </RelativeLayout>
 
     </RelativeLayout>
 

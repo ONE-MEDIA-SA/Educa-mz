@@ -16,11 +16,12 @@ tools:context=".ui.view.HomeFragment">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <ImageView
             android:layout_width="match_parent"
-            android:src="@drawable/bg"
+            android:layout_height="300dp"
             android:scaleType="centerCrop"
-            android:layout_height="300dp"/>
+            android:src="@drawable/bg" />
 
         <com.google.android.material.card.MaterialCardView
             style="@style/CustomCardViewStyle"
@@ -78,18 +79,22 @@ tools:context=".ui.view.HomeFragment">
 
                 </LinearLayout>
 
-                <LinearLayout
-                    android:orientation="vertical"
+                <HorizontalScrollView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp">
-                    <include layout="@layout/item_video" />
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/rv_books"
+                    android:layout_height="wrap_content"
+                    android:scrollbarSize="0.1dp"
+                    >
+                    <LinearLayout
+                        android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
-                </LinearLayout>
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="10dp">
+                        <include layout="@layout/item_video" />
+                        <include layout="@layout/item_new" />
+
+                    </LinearLayout>
+                </HorizontalScrollView>
 
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
