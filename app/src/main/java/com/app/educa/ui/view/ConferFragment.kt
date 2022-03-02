@@ -4,21 +4,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import com.app.educa.databinding.FragmentGalleryBinding
-import com.app.educa.databinding.FragmentHomeBinding
+import com.app.educa.databinding.*
 import com.app.educa.ui.adapter.ExhibitorAdapter
-import com.app.educa.ui.adapter.GalleryAdapter
-import com.app.educa.ui.viewmodel.GalleryViewModel
-import com.app.educa.ui.viewmodel.HomeViewModel
+import com.app.educa.ui.viewmodel.ConferViewModel
 
-class GalleryFragment : Fragment() {
+class ConferFragment : Fragment() {
 
-    private var _binding: FragmentGalleryBinding? = null
+    private var _binding: FragmentConferBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -29,20 +24,22 @@ class GalleryFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val galleryViewModel =
-            ViewModelProvider(this).get(GalleryViewModel::class.java)
+        val conferViewModel =
+            ViewModelProvider(this).get(ConferViewModel::class.java)
 
-        _binding = FragmentGalleryBinding.inflate(inflater, container, false)
+        _binding = FragmentConferBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        galleryViewModel.images.observe(viewLifecycleOwner) {
-            val adapter = GalleryAdapter()
+
+        conferViewModel.exhibitor.observe(viewLifecycleOwner) {
+            val adapter = ExhibitorAdapter()
             adapter.submitList(it)
-            binding.rvGallery.apply {
+            binding.rvExhibitor.apply {
                 this.adapter = adapter
-                layoutManager = StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL)
+                layoutManager = LinearLayoutManager(context)
             }
         }
+
         return root
     }
 

@@ -1,9 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!--  Top corner cardview  -->
+    <style name="CustomTopCardViewStyle" parent="@style/Widget.MaterialComponents.CardView">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay_card_custom_corners_top</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay_card_custom_corners_top" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+        <item name="cornerSizeTopLeft">20dp</item>
+        <item name="cornerSizeTopRight">20dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+    </style>
+    <!--  Close Top corner cardview  -->
+
+    <!--  Left corner cardview  -->
     <style name="CustomCardViewStyle" parent="@style/Widget.MaterialComponents.CardView">
         <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay_card_custom_corners</item>
     </style>
+
     <style name="ShapeAppearanceOverlay_card_custom_corners" parent="">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSizeBottomLeft">20dp</item>
@@ -11,5 +27,35 @@
         <item name="cornerSizeTopRight">0dp</item>
         <item name="cornerSizeBottomRight">0dp</item>
     </style>
+    <!--  Close left corner cardview  -->
 
+    <!--  Left corner cardview  -->
+    <style name="CustomCardViewStyleBottom" parent="@style/Widget.MaterialComponents.CardView">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay_card_custom_corners_bottom</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay_card_custom_corners_bottom" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeBottomLeft">20dp</item>
+        <item name="cornerSizeTopLeft">0dp</item>
+        <item name="cornerSizeTopRight">0dp</item>
+        <item name="cornerSizeBottomRight">20dp</item>
+    </style>
+    <!--  Close left corner cardview  -->
+
+    <style name="circleImageViewLeft" parent="">
+        <item name="cornerFamilyTopLeft">rounded</item>
+        <item name="cornerSizeBottomLeft">20%</item>
+    </style>
+
+    <style name="CornerCut" parent="">
+    <item name="cornerFamilyTopLeft">rounded</item>
+    <item name="cornerFamilyTopRight">cut</item>
+    <item name="cornerFamilyBottomLeft">cut</item>
+    <item name="cornerFamilyBottomRight">rounded</item>
+    <item name="cornerSizeTopLeft">50%</item>
+    <item name="cornerSizeTopRight">25%</item>
+    <item name="cornerSizeBottomLeft">25%</item>
+    <item name="cornerSizeBottomRight">50%</item>
+    </style>
 </resources>
