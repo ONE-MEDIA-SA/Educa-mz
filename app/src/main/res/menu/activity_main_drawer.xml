@@ -10,11 +10,15 @@
             android:title="@string/menu_home" />
         <item
             android:id="@+id/nav_confer"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/ic_ondemand_video_24"
             android:title="@string/menu_confer" />
         <item
             android:id="@+id/nav_schedule"
             android:icon="@drawable/ic_event"
             android:title="@string/menu_schedule" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/menu_gallery" />
     </group>
 </menu>
