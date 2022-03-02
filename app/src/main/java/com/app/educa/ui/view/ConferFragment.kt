@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -32,22 +33,17 @@ class ConferFragment : Fragment() {
         val root: View = binding.root
 
        // val textView: TextView = binding.textGallery
-        conferViewModel.text.observe(viewLifecycleOwner) {
-        }
+//        conferViewModel.text.observe(viewLifecycleOwner) {
+//        }
 
         conferViewModel.exhibitor.observe(viewLifecycleOwner) {
             val adapter = MyAdapter()
-
-            //adapter.submitList(it)
-
-            binding.rvColors.apply {
+            adapter.submitList(it)
+            binding.rvExhibitor.apply {
                 this.adapter = adapter
                 layoutManager = LinearLayoutManager(context)
             }
         }
-
-
-
 
         return root
     }

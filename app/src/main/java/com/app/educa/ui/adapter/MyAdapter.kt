@@ -6,15 +6,17 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.app.educa.databinding.ItemExhibitorHorizontalBinding
+import com.app.educa.model.Exhibitor
+import com.bumptech.glide.Glide
 
-class MyAdapter : ListAdapter<Int, MyAdapter.ExhibitorViewHolder>(Companion) {
+class MyAdapter : ListAdapter<Exhibitor, MyAdapter.ExhibitorViewHolder>(Companion) {
 
-    companion object : DiffUtil.ItemCallback<Int>() {
-        override fun areItemsTheSame(oldItem: Int, newItem: Int): Boolean {
+    companion object : DiffUtil.ItemCallback<Exhibitor>() {
+        override fun areItemsTheSame(oldItem: Exhibitor, newItem: Exhibitor): Boolean {
             return oldItem == newItem
         }
 
-        override fun areContentsTheSame(oldItem: Int, newItem: Int): Boolean {
+        override fun areContentsTheSame(oldItem: Exhibitor, newItem: Exhibitor): Boolean {
             return oldItem == newItem
         }
     }
@@ -30,6 +32,13 @@ class MyAdapter : ListAdapter<Int, MyAdapter.ExhibitorViewHolder>(Companion) {
     }
 
     override fun onBindViewHolder(holder: ExhibitorViewHolder, position: Int) {
-       // holder.binding.root.setBackgroundColor(currentList[position])
+       //holder.binding.root.setBackgroundColor(currentList[position])
+        holder.binding.tvExhibitorName.text = currentList[position].name
+        holder.binding.tvExhibitorCategory.text = currentList[position].category
+
+        Glide
+            .with(holder.binding.root)
+            .load(currentList[position].profile)
+            .into(holder.binding.imgExhibitor)
     }
 }
