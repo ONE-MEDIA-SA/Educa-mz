@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/img_exhibitor"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:src="@drawable/apple"
@@ -27,23 +28,26 @@
             android:layout_marginStart="20dp">
 
             <TextView
+                android:id="@+id/tv_exhibitor_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Apple Inc"
                 android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
 
             <TextView
+                android:id="@+id/tv_exhibitor_category"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
+                android:layout_marginBottom="10dp"
                 android:background="@drawable/bg_border"
+                android:backgroundTint="#E6F2871C"
                 android:paddingStart="14dp"
                 android:paddingTop="2dp"
                 android:paddingEnd="14dp"
                 android:paddingBottom="2dp"
                 android:text="Tecnologia"
-                android:textColor="@color/white"
-                android:layout_marginBottom="10dp"/>
+                android:textColor="@color/white" />
         </RelativeLayout>
     </LinearLayout>
 

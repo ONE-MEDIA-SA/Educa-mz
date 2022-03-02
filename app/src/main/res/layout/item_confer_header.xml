@@ -9,28 +9,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-       <RelativeLayout
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content">
-
            <RelativeLayout
                android:layout_width="match_parent"
                android:layout_height="wrap_content">
 
-               <com.makeramen.roundedimageview.RoundedImageView
-                   android:layout_width="match_parent"
-                   android:layout_height="470dp"
-                   android:scaleType="centerCrop"
-                   app:riv_corner_radius="10dp"
-                   android:src="@drawable/bg_confer1"
-                   />
-               <View
-                   android:layout_width="match_parent"
-                   android:layout_height="470dp"
-                   android:background="@drawable/bg_gradient_foreground"/>
                <LinearLayout
                    android:layout_width="match_parent"
-                   android:layout_height="450dp"
+                   android:layout_height="wrap_content"
                    android:translationZ="2dp"
                    android:orientation="vertical">
 
@@ -40,51 +25,36 @@
                        android:layout_marginTop="-68dp"
                        app:cardCornerRadius="40dp" />
 
-                   <com.google.android.material.divider.MaterialDivider
-                       android:layout_width="match_parent"
-                       android:layout_height="20dp"/>
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_centerVertical="true"
+                           android:layout_marginStart="10dp"
+                           android:layout_marginTop="15dp"
+                           android:layout_marginBottom="6dp"
+                           android:text="Agenda de hoje"
+                           android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
                    <include layout="@layout/item_schedule"/>
-                   <include layout="@layout/item_schedule2"/>
 
                </LinearLayout>
 
            </RelativeLayout>
 
 
-
-       </RelativeLayout>
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/white"
-            android:layout_gravity="center"
-            android:layout_marginTop="-25dp"
-            android:background="@drawable/bg_border"
-            >
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/ic_expand_more"
-                app:tint="@color/white"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="5dp"
-                android:layout_marginBottom="5dp" />
-        </RelativeLayout>
-
         <include layout="@layout/item_ads"/>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
                 android:layout_centerVertical="true"
-                android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                android:text="Exposicao"/>
+                android:layout_marginStart="10dp"
+                android:text="Exposicao"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title" />
 
         </RelativeLayout>
 

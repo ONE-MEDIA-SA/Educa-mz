@@ -1,13 +1,17 @@
 package com.app.educa.ui.view
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.app.educa.databinding.*
+import com.app.educa.ui.adapter.MyAdapter
 import com.app.educa.ui.viewmodel.GalleryViewModel
 
 class ConferFragment : Fragment() {
@@ -31,6 +35,21 @@ class ConferFragment : Fragment() {
 
        // val textView: TextView = binding.textGallery
         galleryViewModel.text.observe(viewLifecycleOwner) {
+        }
+
+        val adapter = MyAdapter()
+        adapter.submitList(listOf(
+            Color.BLUE,
+            Color.RED,
+            Color.YELLOW,
+            Color.GREEN,
+            Color.CYAN,
+            Color.MAGENTA,
+            Color.DKGRAY
+        ))
+        binding.rvColors.apply {
+            this.adapter = adapter
+            layoutManager = LinearLayoutManager(context)
         }
         return root
     }
