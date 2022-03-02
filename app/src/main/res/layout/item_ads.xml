@@ -2,7 +2,7 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardBackgroundColor="@color/blue"
+    app:cardBackgroundColor="@color/black"
     android:layout_margin="10dp"
     app:cardCornerRadius="10dp"
     android:layout_height="160dp">
@@ -10,17 +10,18 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <androidx.appcompat.widget.AppCompatButton
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Participar Agora"
+            android:layout_height="45dp"
             android:layout_alignParentBottom="true"
             android:layout_margin="10dp"
             android:background="@drawable/bg_border"
             android:backgroundTint="@color/white"
-            android:textAllCaps="false"
+            android:paddingStart="15dp"
             android:paddingEnd="15dp"
-            android:paddingStart="15dp"/>
+            android:text="Participar Agora"
+            android:textAllCaps="false" />
 
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/treeNine"

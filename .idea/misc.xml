@@ -15,10 +15,11 @@
         <entry key="app/src/main/res/layout/content_main.xml" value="0.15443840579710144" />
         <entry key="app/src/main/res/layout/fragment_confer.xml" value="0.1984375" />
         <entry key="app/src/main/res/layout/fragment_gallery.xml" value="0.10572916666666667" />
-        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.15" />
         <entry key="app/src/main/res/layout/fragment_slideshow.xml" value="0.1984375" />
         <entry key="app/src/main/res/layout/item_ads.xml" value="0.1984375" />
         <entry key="app/src/main/res/layout/item_confer_header.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/item_exhibitor_horizontal.xml" value="0.1628901239846088" />
         <entry key="app/src/main/res/layout/item_location.xml" value="0.1" />
         <entry key="app/src/main/res/layout/item_new.xml" value="0.19739583333333333" />
         <entry key="app/src/main/res/layout/item_schedule.xml" value="0.18177083333333333" />
