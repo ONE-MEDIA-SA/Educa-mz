@@ -5,14 +5,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.app.educa.databinding.*
 import com.app.educa.ui.adapter.MyAdapter
-import com.app.educa.ui.viewmodel.GalleryViewModel
+import com.app.educa.ui.viewmodel.ConferViewModel
 
 class ConferFragment : Fragment() {
 
@@ -27,30 +25,30 @@ class ConferFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val galleryViewModel =
-            ViewModelProvider(this).get(GalleryViewModel::class.java)
+        val conferViewModel =
+            ViewModelProvider(this).get(ConferViewModel::class.java)
 
         _binding = FragmentConferBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
        // val textView: TextView = binding.textGallery
-        galleryViewModel.text.observe(viewLifecycleOwner) {
+        conferViewModel.text.observe(viewLifecycleOwner) {
         }
 
-        val adapter = MyAdapter()
-        adapter.submitList(listOf(
-            Color.BLUE,
-            Color.RED,
-            Color.YELLOW,
-            Color.GREEN,
-            Color.CYAN,
-            Color.MAGENTA,
-            Color.DKGRAY
-        ))
-        binding.rvColors.apply {
-            this.adapter = adapter
-            layoutManager = LinearLayoutManager(context)
+        conferViewModel.exhibitor.observe(viewLifecycleOwner) {
+            val adapter = MyAdapter()
+
+            //adapter.submitList(it)
+
+            binding.rvColors.apply {
+                this.adapter = adapter
+                layoutManager = LinearLayoutManager(context)
+            }
         }
+
+
+
+
         return root
     }
 
