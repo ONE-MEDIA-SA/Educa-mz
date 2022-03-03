@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Educa">
         <activity
+            android:name=".ui.view.ForgotPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.view.LoginActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.view.RegisterActivity"
             android:exported="false" />
         <activity
