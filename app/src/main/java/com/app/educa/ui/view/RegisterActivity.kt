@@ -33,7 +33,9 @@ class RegisterActivity : AppCompatActivity() {
         }
 
         binding.tvForgotPassword.setOnClickListener {
-            Toast.makeText(this, "Forgot Password", Toast.LENGTH_SHORT).show()
+            Intent(this, ForgotPasswordActivity::class.java).also {
+                startActivity(it)
+            }
         }
 
     }
