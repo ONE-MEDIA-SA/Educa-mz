@@ -38,10 +38,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Login"
+                android:text="Cadastre-se"
+                android:layout_marginTop="10dp"
                 android:textAppearance="@style/TextAppearance.AppCompat.Title"
                 android:textColor="@color/white"
-                android:textSize="50sp" />
+                android:textSize="40sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -53,11 +54,27 @@
             android:orientation="vertical">
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/name_input_layout"
                 style="@style/OutlinedRoundedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <EditText
+                    android:id="@+id/ed_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nome"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/email_input_layout"
+                style="@style/OutlinedRoundedBox"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/ed_email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Email"
@@ -65,6 +82,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/password_input_layout"
                 style="@style/OutlinedRoundedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -72,21 +90,51 @@
                 app:endIconMode="password_toggle">
 
                 <EditText
+                    android:id="@+id/ed_password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Password"
                     android:inputType="textPassword" />
             </com.google.android.material.textfield.TextInputLayout>
 
-
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_signup"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/bg_rounded_input_field"
-                android:text="Entrar"
+                android:text="Cadastrar"
                 android:textColor="@color/white"
                 android:textStyle="bold" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <Button
+                    android:id="@+id/tv_login"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ja possui uma conta?"
+                    android:textAlignment="textStart"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                    />
+
+                <Button
+                    android:id="@+id/tv_forgot_password"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Recuperar senha"
+                    android:textAlignment="textEnd"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                    />
+
+            </LinearLayout>
 
         </LinearLayout>
     </LinearLayout>
