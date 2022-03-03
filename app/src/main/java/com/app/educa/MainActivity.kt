@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
@@ -15,7 +14,7 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.app.educa.databinding.ActivityMainBinding
-import com.app.educa.ui.view.LoginActivity
+import com.app.educa.ui.view.RegisterActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -57,7 +56,7 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_profile -> {
-                Intent(this, LoginActivity::class.java).also {
+                Intent(this, RegisterActivity::class.java).also {
                     startActivity(it)
                 }
                 true
