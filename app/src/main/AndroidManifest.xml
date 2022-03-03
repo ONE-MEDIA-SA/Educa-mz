@@ -12,6 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Educa">
         <activity
+            android:name=".ui.view.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.login.LoginActivity"
+            android:exported="false"
+            android:label="@string/title_activity_login" />
+        <activity
             android:name=".ui.view.ExhibitorPageActivity"
             android:exported="false" />
         <activity
