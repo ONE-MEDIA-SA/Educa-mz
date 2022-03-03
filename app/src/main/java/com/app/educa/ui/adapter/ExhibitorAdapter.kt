@@ -1,12 +1,15 @@
 package com.app.educa.ui.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.app.educa.databinding.ItemExhibitorHorizontalBinding
 import com.app.educa.model.Exhibitor
+import com.app.educa.ui.view.ExhibitorPageActivity
 import com.bumptech.glide.Glide
 
 class ExhibitorAdapter : ListAdapter<Exhibitor, ExhibitorAdapter.ExhibitorViewHolder>(Companion) {
@@ -32,7 +35,6 @@ class ExhibitorAdapter : ListAdapter<Exhibitor, ExhibitorAdapter.ExhibitorViewHo
     }
 
     override fun onBindViewHolder(holder: ExhibitorViewHolder, position: Int) {
-       //holder.binding.root.setBackgroundColor(currentList[position])
         holder.binding.tvExhibitorName.text = currentList[position].name
         holder.binding.tvExhibitorCategory.text = currentList[position].category
 
@@ -40,5 +42,10 @@ class ExhibitorAdapter : ListAdapter<Exhibitor, ExhibitorAdapter.ExhibitorViewHo
             .with(holder.binding.root)
             .load(currentList[position].profile)
             .into(holder.binding.imgExhibitor)
+
+        holder.binding.root.setOnClickListener{
+            val intent = Intent(holder.binding.root.context, ExhibitorPageActivity::class.java)
+            holder.binding.root.context.startActivity(intent)
+        }
     }
 }

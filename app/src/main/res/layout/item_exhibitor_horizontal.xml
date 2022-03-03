@@ -23,7 +23,7 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:layout_marginBottom="5dp"
             android:layout_marginStart="20dp">
 
@@ -31,9 +31,22 @@
                 android:id="@+id/tv_exhibitor_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="40dp"
                 android:text="Apple Inc"
                 android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
 
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/btn_exhibitor_favorite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:backgroundTint="#F7F8FA"
+                app:elevation="0dp"
+                android:layout_margin="5dp"
+                app:tint="#e7e8ef"
+                app:borderWidth="0dp"
+                app:srcCompat="@drawable/ic_favorite"
+                app:fabSize="mini"/>
             <TextView
                 android:id="@+id/tv_exhibitor_category"
                 android:layout_width="wrap_content"
@@ -41,7 +54,8 @@
                 android:layout_alignParentBottom="true"
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/bg_border"
-                android:backgroundTint="#E6F2871C"
+                android:backgroundTint="#E6F89D42"
+                android:textSize="10sp"
                 android:paddingStart="14dp"
                 android:paddingTop="2dp"
                 android:paddingEnd="14dp"
