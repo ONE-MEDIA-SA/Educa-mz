@@ -26,6 +26,7 @@
             android:background="@drawable/bg_border"
             android:layout_marginTop="-50dp">
             <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/rounded"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:scaleType="centerCrop"
