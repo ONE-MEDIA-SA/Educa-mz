@@ -18,10 +18,10 @@ public class ViewPagerAdapter(fragmentManager: FragmentManager, lifecycle: Lifec
 
     override fun createFragment(position: Int): Fragment {
         when (position){
-            0 -> return AboutFragment()
+            0 -> return  ProductFragment()
             1 -> return GalleryFragment()
         }
-        return ProductFragment()
+        return AboutFragment()
     }
 
 }
