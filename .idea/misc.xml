@@ -12,10 +12,11 @@
         <entry key="app/src/main/res/drawable/ic_blob.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_location_on.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_notification.xml" value="0.1255" />
-        <entry key="app/src/main/res/layout/activity_exhibitor_page.xml" value="0.15006412997007268" />
+        <entry key="app/src/main/res/layout/activity_exhibitor_page.xml" value="0.17117117117117117" />
         <entry key="app/src/main/res/layout/activity_forgot_password.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1984375" />
+        <entry key="app/src/main/res/layout/activity_profile.xml" value="0.1" />
         <entry key="app/src/main/res/layout/app_bar_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/content_main.xml" value="0.15443840579710144" />
         <entry key="app/src/main/res/layout/fragment_confer.xml" value="0.1984375" />
