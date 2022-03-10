@@ -1,20 +1,16 @@
-package com.app.educa.ui.view
+package com.app.educa.ui.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.app.educa.databinding.FragmentGalleryBinding
-import com.app.educa.databinding.FragmentHomeBinding
-import com.app.educa.ui.adapter.ExhibitorAdapter
 import com.app.educa.ui.adapter.GalleryAdapter
 import com.app.educa.ui.viewmodel.GalleryViewModel
-import com.app.educa.ui.viewmodel.HomeViewModel
 
 class GalleryFragment : Fragment() {
 

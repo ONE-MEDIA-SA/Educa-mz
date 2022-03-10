@@ -36,10 +36,11 @@ class ProductAdapter : ListAdapter<Product, ProductAdapter.ProductViewHolder>(Co
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
         Glide
             .with(holder.binding.root)
-            .load(currentList[position])
+            .load(currentList[position].image)
             .into(holder.binding.imageProduct)
+
         holder.binding.tvProductName.text = currentList[position].name
-        holder.binding.tvProductPrice.text = """${currentList[position].price} MZN"""
+        holder.binding.tvProductPrice.text = currentList[position].getFormattedPrice()
         holder.binding.root.setOnClickListener {
             Toast.makeText(holder.binding.root.context, "Clicked", Toast.LENGTH_SHORT).show()
         }

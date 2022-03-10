@@ -7,18 +7,16 @@ import com.app.educa.model.Product
 
 class ProductViewModel: ViewModel() {
     private val _products = MutableLiveData<List<Product>>().apply {
-        for (i in 0..10) {
-            value = listOf(
-                Product(
-                    1,
-                    "Product 1",
-                    "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pinterest.com%2Fpin%2F624790873524098983%2F&psig=AOvVaw2X_Z-_X-_q-_X-_Q-_X-_&ust=1589788240870000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCLjq-x-_e-kCFQAAAAAdAAAAABAD",
-                    2600.0,
-                    "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pinterest.com%2Fpin%2F624790873524098983%2F&psig=AOvVaw2X_Z-_X-_q-_X-_Q-_X-_&ust=1589788240870000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCLjq-x-_e-kCFQAAAAAdAAAAABAD",
-                    "Sapatos"
-                )
-            )
-        }
+        value = getData()
     }
     val products: LiveData<List<Product>> = _products
+
+    private fun getData(): List<Product> {
+        var list: MutableList<Product> = mutableListOf()
+
+        for (i in 0..10) {
+            list.add(Product(i, "Tênis Adidas Runfalcon 2.0 Masculino", "Categoria $i", 1700.00, "https://images.unsplash.com/photo-1508609349937-5ec4ae374ebf?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb", "Category"))
+        }
+        return list
+    }
 }

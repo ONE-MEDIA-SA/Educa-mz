@@ -6,4 +6,8 @@ data class Product(
     val description: String,
     val price: Double,
     val image: String,
-    val category: String)
+    val category: String){
+    fun getFormattedPrice(): String {
+        return "${price.toInt()} MZN"
+    }
+}

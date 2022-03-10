@@ -24,7 +24,7 @@
         tools:layout="@layout/fragment_schedule" />
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="com.app.educa.ui.view.GalleryFragment"
+        android:name="com.app.educa.ui.fragment.GalleryFragment"
         android:label="@string/menu_gallery"
         tools:layout="@layout/fragment_gallery" />
 </navigation>

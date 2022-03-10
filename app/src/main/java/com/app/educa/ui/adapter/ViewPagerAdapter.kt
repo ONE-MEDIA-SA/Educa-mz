@@ -6,7 +6,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.app.educa.ui.fragment.AboutFragment
 import com.app.educa.ui.fragment.ProductFragment
-import com.app.educa.ui.view.GalleryFragment
+import com.app.educa.ui.fragment.GalleryFragment
 
 private const val NUM_TABS = 3
 
