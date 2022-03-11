@@ -11,3 +11,10 @@
   <img height="600em" src="https://raw.githubusercontent.com/Agostinhodossantos/Educa-mz/main/Screenshoot/login.jpg"/>
   <img height="600em" src="https://raw.githubusercontent.com/Agostinhodossantos/Educa-mz/main/Screenshoot/exhibitor_page.jpg"/>
 </div>
+  
+<div align="start">
+  <a href="https://github.com/agostinhodossantos">
+  <img height="600em" src="https://raw.githubusercontent.com/Agostinhodossantos/Educa-mz/main/Screenshoot/schedule.jpg"/>
+  <img height="600em" src="https://raw.githubusercontent.com/Agostinhodossantos/Educa-mz/main/Screenshoot/gallery.jpg"/>
+  <img height="600em" src="https://raw.githubusercontent.com/Agostinhodossantos/Educa-mz/main/Screenshoot/register.jpg"/>
+</div>
