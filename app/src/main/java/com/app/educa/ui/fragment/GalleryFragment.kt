@@ -36,7 +36,7 @@ class GalleryFragment : Fragment() {
             adapter.submitList(it)
             binding.rvGallery.apply {
                 this.adapter = adapter
-                layoutManager = StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL)
+                layoutManager = StaggeredGridLayoutManager(3, LinearLayoutManager.VERTICAL)
             }
         }
         return root
