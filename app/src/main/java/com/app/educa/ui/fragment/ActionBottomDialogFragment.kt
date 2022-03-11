@@ -24,10 +24,10 @@ class ActionBottomDialogFragment : BottomSheetDialogFragment(), View.OnClickList
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         /**now call all textView*/
-        view.findViewById<TextView>(R.id.text0).setOnClickListener(this)
-        view.findViewById<TextView>(R.id.text1).setOnClickListener(this)
-        view.findViewById<TextView>(R.id.text2).setOnClickListener(this)
-        view.findViewById<TextView>(R.id.text3).setOnClickListener(this)
+//        view.findViewById<TextView>(R.id.text0).setOnClickListener(this)
+//        view.findViewById<TextView>(R.id.text1).setOnClickListener(this)
+//        view.findViewById<TextView>(R.id.text2).setOnClickListener(this)
+//        view.findViewById<TextView>(R.id.text3).setOnClickListener(this)
     }
 
     override fun onAttach(context: Context) {

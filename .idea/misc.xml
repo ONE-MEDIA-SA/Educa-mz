@@ -3,12 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/bg_acount_oval.xml" value="0.1745" />
         <entry key="app/src/main/res/drawable/bg_border.xml" value="0.162" />
         <entry key="app/src/main/res/drawable/bg_gradient.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/bg_gradient_foreground.xml" value="0.161" />
         <entry key="app/src/main/res/drawable/bg_rounded_input_field.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/bg_search.xml" value="0.206" />
         <entry key="app/src/main/res/drawable/ic_access_time_filled.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.1745" />
+        <entry key="app/src/main/res/drawable/ic_baseline_email_24.xml" value="0.1745" />
         <entry key="app/src/main/res/drawable/ic_blob.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_location_on.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_notification.xml" value="0.1255" />
@@ -31,6 +34,7 @@
         <entry key="app/src/main/res/layout/item_exhibitor_horizontal.xml" value="0.12" />
         <entry key="app/src/main/res/layout/item_gallery.xml" value="0.10773834972210346" />
         <entry key="app/src/main/res/layout/item_location.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/item_location_about.xml" value="0.16203505771697307" />
         <entry key="app/src/main/res/layout/item_new.xml" value="0.19739583333333333" />
         <entry key="app/src/main/res/layout/item_product_h.xml" value="0.18" />
         <entry key="app/src/main/res/layout/item_schedule.xml" value="0.18177083333333333" />
