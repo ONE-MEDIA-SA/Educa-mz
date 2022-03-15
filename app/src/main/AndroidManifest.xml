@@ -23,10 +23,11 @@
         <activity
             android:name=".ui.activity.RegisterActivity"
             android:exported="false" />
+
         <activity
-            android:name=".ui.login.LoginActivity"
-            android:exported="false"
-            android:label="@string/title_activity_login" />
+            android:name=".ui.activity.FavoriteActivity"
+            android:exported="false"/>
+
         <activity
             android:name=".ui.activity.ExhibitorPageActivity"
             android:exported="false" />
