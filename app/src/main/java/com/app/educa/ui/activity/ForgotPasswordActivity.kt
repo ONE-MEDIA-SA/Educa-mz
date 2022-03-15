@@ -1,11 +1,9 @@
-package com.app.educa.ui.view
+package com.app.educa.ui.activity
 
-import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.webkit.WebView
 import android.webkit.WebViewClient
-import com.app.educa.R
 import com.app.educa.databinding.ActivityForgotPasswordBinding
 
 class ForgotPasswordActivity : AppCompatActivity() {

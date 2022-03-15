@@ -1,4 +1,4 @@
-package com.app.educa.ui.view
+package com.app.educa.ui.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,12 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.app.educa.databinding.FragmentScheduleBinding
-import com.app.educa.ui.viewmodel.ScheduleViewModel
+import com.app.educa.databinding.FragmentHomeBinding
+import com.app.educa.ui.viewmodel.HomeViewModel
 
-class ScheduleFragment : Fragment() {
+class HomeFragment : Fragment() {
 
-    private var _binding: FragmentScheduleBinding? = null
+    private var _binding: FragmentHomeBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -22,14 +22,14 @@ class ScheduleFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val slideshowViewModel =
-            ViewModelProvider(this).get(ScheduleViewModel::class.java)
+        val homeViewModel =
+            ViewModelProvider(this).get(HomeViewModel::class.java)
 
-        _binding = FragmentScheduleBinding.inflate(inflater, container, false)
+        _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        //val textView: TextView = binding.textSlideshow
-        slideshowViewModel.text.observe(viewLifecycleOwner) {
+        //val textView: TextView = binding.textHome
+        homeViewModel.text.observe(viewLifecycleOwner) {
            // textView.text = it
         }
         return root

@@ -14,7 +14,7 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.app.educa.databinding.ActivityMainBinding
-import com.app.educa.ui.view.RegisterActivity
+import com.app.educa.ui.activity.RegisterActivity
 
 class MainActivity : AppCompatActivity() {
 

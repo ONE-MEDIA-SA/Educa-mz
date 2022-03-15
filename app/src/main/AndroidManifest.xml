@@ -12,23 +12,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Educa">
         <activity
-            android:name=".ui.view.ProfileActivity"
+            android:name=".ui.activity.ProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.view.ForgotPasswordActivity"
+            android:name=".ui.activity.ForgotPasswordActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.view.LoginActivity"
+            android:name=".ui.activity.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.view.RegisterActivity"
+            android:name=".ui.activity.RegisterActivity"
             android:exported="false" />
         <activity
             android:name=".ui.login.LoginActivity"
             android:exported="false"
             android:label="@string/title_activity_login" />
         <activity
-            android:name=".ui.view.ExhibitorPageActivity"
+            android:name=".ui.activity.ExhibitorPageActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

@@ -1,4 +1,4 @@
-package com.app.educa.ui.view
+package com.app.educa.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

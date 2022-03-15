@@ -1,18 +1,15 @@
-package com.app.educa.ui.view
+package com.app.educa.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import androidx.viewpager.widget.ViewPager
-import com.app.educa.R
 import com.app.educa.databinding.ActivityExhibitorPageBinding
 import com.app.educa.ui.adapter.ViewPagerAdapter
 import com.app.educa.utils.ActionBottom
 import com.app.educa.utils.ItemClickListener
-import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
-val animalsArray = arrayOf(
+val menuArray = arrayOf(
     "Produtos",
     "Galeria",
     "Sobre"
@@ -34,7 +31,7 @@ class ExhibitorPageActivity : AppCompatActivity(),ItemClickListener {
         viewPager.adapter = adapter
 
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
-            tab.text = animalsArray[position]
+            tab.text = menuArray[position]
         }.attach()
 
         binding.rounded.setOnClickListener {
