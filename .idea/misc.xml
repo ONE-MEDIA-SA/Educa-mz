@@ -16,6 +16,7 @@
         <entry key="app/src/main/res/drawable/ic_location_on.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_notification.xml" value="0.1255" />
         <entry key="app/src/main/res/layout/activity_exhibitor_page.xml" value="0.17117117117117117" />
+        <entry key="app/src/main/res/layout/activity_favorite.xml" value="0.12252252252252252" />
         <entry key="app/src/main/res/layout/activity_forgot_password.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.1628901239846088" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1984375" />
