@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".ui.fragment.ConferFragment">
+    tools:context=".ui.activity.FavoriteActivity">
 
 
     <com.google.android.material.tabs.TabLayout
