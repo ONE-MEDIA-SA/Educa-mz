@@ -158,7 +158,7 @@
         <TextView
             android:layout_width="match_parent"
             android:background="@drawable/bg_question"
-            android:text="Come"
+            android:text="Rate the quality of the food in your class"
             android:padding="15dp"
             android:drawableEnd="@drawable/ic_outline_circle_24"
             android:layout_height="wrap_content">
@@ -167,7 +167,7 @@
         <TextView
             android:layout_width="match_parent"
             android:background="@drawable/bg_outline"
-            android:text="Come"
+            android:text="The food quality is"
             android:layout_marginTop="15dp"
             android:padding="15dp"
             android:drawableEnd="@drawable/ic_baseline_check_circle_24"
@@ -177,7 +177,7 @@
         <TextView
             android:layout_width="match_parent"
             android:background="@drawable/bg_question"
-            android:text="Come"
+            android:text="mainly made of"
             android:layout_marginTop="15dp"
             android:padding="15dp"
             android:drawableEnd="@drawable/ic_outline_circle_24"
@@ -187,7 +187,7 @@
         <TextView
             android:layout_width="match_parent"
             android:background="@drawable/bg_question"
-            android:text="Come"
+            android:text="of which "
             android:layout_marginTop="15dp"
             android:padding="15dp"
             android:drawableEnd="@drawable/ic_outline_circle_24"
