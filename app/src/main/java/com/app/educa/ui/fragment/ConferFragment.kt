@@ -1,4 +1,4 @@
-package com.app.educa.ui.view
+package com.app.educa.ui.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater

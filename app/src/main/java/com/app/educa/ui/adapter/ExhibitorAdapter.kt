@@ -3,13 +3,12 @@ package com.app.educa.ui.adapter
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.app.educa.databinding.ItemExhibitorHorizontalBinding
 import com.app.educa.model.Exhibitor
-import com.app.educa.ui.view.ExhibitorPageActivity
+import com.app.educa.ui.activity.ExhibitorPageActivity
 import com.bumptech.glide.Glide
 
 class ExhibitorAdapter : ListAdapter<Exhibitor, ExhibitorAdapter.ExhibitorViewHolder>(Companion) {

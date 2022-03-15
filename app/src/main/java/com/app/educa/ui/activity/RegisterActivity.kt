@@ -1,11 +1,9 @@
-package com.app.educa.ui.view
+package com.app.educa.ui.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import android.widget.Toast
-import com.app.educa.R
 import com.app.educa.databinding.ActivityRegisterBinding
 
 class RegisterActivity : AppCompatActivity() {

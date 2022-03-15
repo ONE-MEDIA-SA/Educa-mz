@@ -7,7 +7,7 @@ android:layout_width="match_parent"
 android:orientation="vertical"
 android:background="#F8F8F8"
 android:layout_height="match_parent"
-tools:context=".ui.view.HomeFragment">
+tools:context=".ui.fragment.HomeFragment">
 <LinearLayout
     android:orientation="vertical"
     android:layout_width="match_parent"
