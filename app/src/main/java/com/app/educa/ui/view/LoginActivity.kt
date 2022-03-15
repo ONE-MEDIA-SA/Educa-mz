@@ -27,12 +27,14 @@ class LoginActivity : AppCompatActivity() {
         if(email.isEmpty()) {
             binding.emailInputLayout.error = "Email is required"
         } else if (password.isEmpty()) {
+            binding.emailInputLayout.error = null
             binding.passwordInputLayout.error = "Password is required"
         } else {
             binding.emailInputLayout.error = null
             binding.passwordInputLayout.error = null
 
-            Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show()
+
         }
     }
+
 }
