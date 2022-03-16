@@ -5,10 +5,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.app.educa.R
 import com.app.educa.databinding.FragmentHomeBinding
+import com.app.educa.ui.activity.StudyViewActivity
 import com.app.educa.ui.activity.YoutubePlayerActivity
 import com.app.educa.ui.viewmodel.HomeViewModel
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -16,9 +18,9 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
+    private lateinit var btnPlay: FloatingActionButton
+    private lateinit var llSearchButton: LinearLayout
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -32,15 +34,19 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        //val textView: TextView = binding.textHome
-        val btnPlay  = root.findViewById<FloatingActionButton>(R.id.btn_play)
-        btnPlay.setOnClickListener {
-            startActivity(Intent(activity, YoutubePlayerActivity::class.java))
-        }
+        initViews(root)
+
+        btnPlay.setOnClickListener { startActivity(Intent(activity, YoutubePlayerActivity::class.java)) }
+        llSearchButton.setOnClickListener { startActivity(Intent(activity, StudyViewActivity::class.java)) }
         homeViewModel.text.observe(viewLifecycleOwner) {
            // textView.text = it
         }
         return root
+    }
+
+    private fun initViews(root: View) {
+        btnPlay  = root.findViewById<FloatingActionButton>(R.id.btn_play)
+        llSearchButton = root.findViewById<LinearLayout>(R.id.ll_search_button)
     }
 
     override fun onDestroyView() {
