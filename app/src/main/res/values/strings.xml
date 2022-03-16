@@ -11,6 +11,7 @@
     <string name="menu_confer">Feira</string>
     <string name="menu_schedule">Agenda</string>
     <string name="menu_gallery">Galeria</string>
+    <string name="menu_game">Jogo</string>
     <string name="menu_favorite">Favoritos</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="prompt_email">Email</string>

@@ -6,13 +6,13 @@ import androidx.appcompat.app.AppCompatActivity
 import com.app.educa.R
 
 import com.app.educa.databinding.*
+import com.app.educa.ui.adapter.FavoriteViewPager
 import com.app.educa.ui.adapter.ViewPagerAdapter
 import com.google.android.material.tabs.TabLayoutMediator
 
 val menu = arrayOf(
     "Produtos",
-    "Expositores",
-    "Expositores",
+    "Expositores"
 )
 
 class FavoriteActivity : AppCompatActivity() {
@@ -27,7 +27,7 @@ class FavoriteActivity : AppCompatActivity() {
         val viewPager = binding.viewPager
         val tabLayout = binding.tabLayout
 
-        val adapter = ViewPagerAdapter(supportFragmentManager, lifecycle)
+        val adapter = FavoriteViewPager(supportFragmentManager, lifecycle)
         viewPager.adapter = adapter
 
 

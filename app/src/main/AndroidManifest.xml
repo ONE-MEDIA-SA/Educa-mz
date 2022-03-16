@@ -12,6 +12,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Educa">
         <activity
+            android:name=".ui.activity.SearchActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.StudyViewActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".ui.activity.YoutubePlayerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.GameActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.activity.ProfileActivity"
             android:exported="false" />
         <activity
@@ -23,11 +36,9 @@
         <activity
             android:name=".ui.activity.RegisterActivity"
             android:exported="false" />
-
         <activity
             android:name=".ui.activity.FavoriteActivity"
-            android:exported="false"/>
-
+            android:exported="false" />
         <activity
             android:name=".ui.activity.ExhibitorPageActivity"
             android:exported="false" />

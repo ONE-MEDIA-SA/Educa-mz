@@ -30,6 +30,12 @@
         tools:layout="@layout/fragment_gallery" />
 
     <activity
+        android:id="@+id/nav_game"
+        android:name="com.app.educa.ui.activity.GameActivity"
+        android:label="@string/menu_game"
+        tools:layout="@layout/activity_game" />
+
+    <activity
         android:id="@+id/nav_favorite"
         android:name="com.app.educa.ui.activity.FavoriteActivity"
         android:label="@string/menu_favorite"
