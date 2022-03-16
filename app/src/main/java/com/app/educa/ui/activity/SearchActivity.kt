@@ -1,6 +1,7 @@
 package com.app.educa.ui.activity
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -28,19 +29,18 @@ class SearchActivity : AppCompatActivity() {
 
         binding.btnSearch.setOnClickListener {
 
-            var query:String = binding.edSearch.text.toString()
-            println("Query = " +query)
+            var query: String = binding.edSearch.text.toString()
 
             if (query.isNotEmpty()) {
                 var intent = Intent(this, StudyViewActivity::class.java).apply {
-                    putExtra("query", query )
+                    putExtra("query", query)
                 }
                 startActivity(intent)
             } else {
-
+                binding.edSearch.requestFocus()
+                binding.edSearch.setHintTextColor(Color.RED)
             }
 
         }
-
     }
 }
