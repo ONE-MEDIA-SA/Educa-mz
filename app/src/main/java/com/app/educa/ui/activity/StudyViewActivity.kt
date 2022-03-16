@@ -2,8 +2,10 @@ package com.app.educa.ui.activity
 
 import android.os.AsyncTask
 import android.os.Bundle
+import android.view.View
 import android.webkit.WebView
 import android.webkit.WebViewClient
+import android.widget.ProgressBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.app.educa.databinding.ActivityStudyViewBinding
@@ -21,6 +23,7 @@ class StudyViewActivity : AppCompatActivity() {
     lateinit var binding: ActivityStudyViewBinding
     private lateinit var webView: WebView
     private lateinit var toolbar: Toolbar
+    private lateinit var progressBar: ProgressBar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,15 +31,15 @@ class StudyViewActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         BASE_URL = "https://www.google.com/search?q=$query"
-        WebScratch().execute()
         webView = binding.webview
+        progressBar = binding.progressBar
+
         setSupportActionBar(binding.toolbar)
         binding.toolbar.title = query
 
-
         supportActionBar?.setDisplayHomeAsUpEnabled(true);
         supportActionBar?.setDisplayShowHomeEnabled(true)
-
+        WebScratch().execute()
     }
 
     private fun startWebView(url: String) {
@@ -49,6 +52,7 @@ class StudyViewActivity : AppCompatActivity() {
             }
         }
         webView.loadUrl(url)
+        progressBar.visibility = View.GONE
     }
 
     inner class WebScratch : AsyncTask<Void, Void, Void>() {
