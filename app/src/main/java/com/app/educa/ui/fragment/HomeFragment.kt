@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.app.educa.R
 import com.app.educa.databinding.FragmentHomeBinding
+import com.app.educa.ui.activity.SearchActivity
 import com.app.educa.ui.activity.StudyViewActivity
 import com.app.educa.ui.activity.YoutubePlayerActivity
 import com.app.educa.ui.viewmodel.HomeViewModel
@@ -37,7 +38,7 @@ class HomeFragment : Fragment() {
         initViews(root)
 
         btnPlay.setOnClickListener { startActivity(Intent(activity, YoutubePlayerActivity::class.java)) }
-        llSearchButton.setOnClickListener { startActivity(Intent(activity, StudyViewActivity::class.java)) }
+        llSearchButton.setOnClickListener { startActivity(Intent(activity, SearchActivity::class.java)) }
         homeViewModel.text.observe(viewLifecycleOwner) {
            // textView.text = it
         }

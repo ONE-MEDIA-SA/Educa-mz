@@ -1,14 +1,18 @@
 package com.app.educa.ui.activity
 
+import android.content.Intent
 import android.os.AsyncTask
 import android.os.Bundle
 import android.view.View
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.ProgressBar
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.app.educa.databinding.ActivityStudyViewBinding
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 import org.jsoup.Jsoup
 import org.jsoup.select.Elements
 import org.w3c.dom.Document
@@ -29,6 +33,9 @@ class StudyViewActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityStudyViewBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        query = intent.getStringExtra("query").toString()
+        Toast.makeText(this, query, Toast.LENGTH_SHORT).show()
 
         BASE_URL = "https://www.google.com/search?q=$query"
         webView = binding.webview
@@ -55,8 +62,15 @@ class StudyViewActivity : AppCompatActivity() {
         progressBar.visibility = View.GONE
     }
 
+    suspend fun getHtml(url: String) {
+        withContext(Dispatchers.IO) {
+            val html = Jsoup.connect(url).get()
+            html.toString()
+        }
+    }
+
     inner class WebScratch : AsyncTask<Void, Void, Void>() {
-        private lateinit var words: String
+        private lateinit var searchStr: String
         override fun doInBackground(vararg params: Void): Void? {
             try {
 
@@ -73,9 +87,8 @@ class StudyViewActivity : AppCompatActivity() {
                     }
                 }
 
-                println("LINKS=$linkList")
                 if (linkList.size > 0) {
-                    words = linkList[Random.nextInt(1, linkList.size - 1)]
+                    searchStr = linkList[Random.nextInt(1, linkList.size - 1)]
                 }
             } catch (e: IOException) {
                 e.printStackTrace()
@@ -84,7 +97,12 @@ class StudyViewActivity : AppCompatActivity() {
         }
         override fun onPostExecute(aVoid: Void?) {
             super.onPostExecute(aVoid)
-            startWebView(words)
+            if(searchStr != null) {
+                startWebView(searchStr)
+            } else {
+                Toast.makeText(this@StudyViewActivity, "No results found", Toast.LENGTH_SHORT).show()
+                //TODO: Handle error
+            }
         }
     }
 }

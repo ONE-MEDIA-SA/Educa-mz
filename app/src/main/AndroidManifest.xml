@@ -12,9 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Educa">
         <activity
+            android:name=".ui.activity.SearchActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.activity.StudyViewActivity"
             android:exported="false"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".ui.activity.YoutubePlayerActivity"
             android:exported="false" />

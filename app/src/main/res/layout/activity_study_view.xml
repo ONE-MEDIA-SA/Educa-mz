@@ -12,7 +12,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:outlineProvider="none"
-
         android:theme="@style/Theme.Educa.AppBarOverlay">
 
         <androidx.appcompat.widget.Toolbar
