@@ -101,7 +101,7 @@ class StudyViewActivity : AppCompatActivity() {
                 startWebView(searchStr)
             } else {
                 Toast.makeText(this@StudyViewActivity, "No results found", Toast.LENGTH_SHORT).show()
-                //TODO: Handle error
+                finish()
             }
         }
     }
