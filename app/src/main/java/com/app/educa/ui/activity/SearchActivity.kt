@@ -27,15 +27,20 @@ class SearchActivity : AppCompatActivity() {
         binding.edSearch.requestFocus()
         window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE)
 
+        var category = intent.getStringExtra("category")
+        if (category != null) {
+            binding.llChips.visibility = View.VISIBLE
+        }
+
         binding.btnSearch.setOnClickListener {
 
             var query: String = binding.edSearch.text.toString()
 
             if (query.isNotEmpty()) {
-                var intent = Intent(this, StudyViewActivity::class.java).apply {
+                Intent(this, StudyViewActivity::class.java).apply {
                     putExtra("query", query)
+                    startActivity(intent)
                 }
-                startActivity(intent)
             } else {
                 binding.edSearch.requestFocus()
                 binding.edSearch.setHintTextColor(Color.RED)

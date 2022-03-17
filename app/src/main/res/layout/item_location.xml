@@ -10,7 +10,7 @@
     android:clipToPadding="true"
     android:elevation="3dp"
     app:cardBackgroundColor="@color/black"
-    android:layout_height="200dp">
+    android:layout_height="wrap_content">
 
     <LinearLayout
         android:orientation="vertical"
@@ -18,19 +18,14 @@
         android:layout_height="match_parent">
         <LinearLayout
             android:layout_weight="1"
-            android:paddingTop="10dp"
-            android:paddingStart="10dp"
-            android:gravity="center_vertical"
-            android:background="@color/white"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                android:text="EDUCA - Esta a decorrer agora"
-                />
 
+            <com.google.android.gms.maps.MapView
+                android:id="@+id/map"
+                android:apiKey="AIzaSyC4icV5VaJ2OE2RCaR8PuN1f-DycLwpqfw"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"/>
 
         </LinearLayout>
 
