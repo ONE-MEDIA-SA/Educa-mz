@@ -95,7 +95,7 @@ class HomeFragment : Fragment() {
             mapType = GoogleMap.MAP_TYPE_NORMAL
 
             setOnMapClickListener {
-                Toast.makeText(context, "Clicked on map", Toast.LENGTH_SHORT).show()
+                //Toast.makeText(context, "Clicked on map", Toast.LENGTH_SHORT).show()
             }
         }
     }
