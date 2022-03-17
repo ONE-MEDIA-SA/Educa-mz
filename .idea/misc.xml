@@ -43,6 +43,7 @@
         <entry key="app/src/main/res/layout/fragment_gallery.xml" value="0.10572916666666667" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.15" />
         <entry key="app/src/main/res/layout/fragment_product.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_schedule.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_slideshow.xml" value="0.1984375" />
         <entry key="app/src/main/res/layout/item_ads.xml" value="0.1984375" />
         <entry key="app/src/main/res/layout/item_confer_header.xml" value="0.18177083333333333" />
