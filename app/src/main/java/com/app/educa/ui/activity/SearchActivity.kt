@@ -39,7 +39,7 @@ class SearchActivity : AppCompatActivity() {
             if (query.isNotEmpty()) {
                 Intent(this, StudyViewActivity::class.java).apply {
                     putExtra("query", query)
-                    startActivity(intent)
+                    startActivity(this)
                 }
             } else {
                 binding.edSearch.requestFocus()

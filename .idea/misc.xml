@@ -25,6 +25,7 @@
         <entry key="app/src/main/res/layout/activity_exhibitor_page.xml" value="0.17117117117117117" />
         <entry key="app/src/main/res/layout/activity_favorite.xml" value="0.12252252252252252" />
         <entry key="app/src/main/res/layout/activity_forgot_password.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_gallery.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_game.xml" value="0.17162162162162162" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.1628901239846088" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1984375" />
@@ -43,7 +44,7 @@
         <entry key="app/src/main/res/layout/fragment_gallery.xml" value="0.10572916666666667" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.15" />
         <entry key="app/src/main/res/layout/fragment_product.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/fragment_schedule.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_schedule.xml" value="0.22" />
         <entry key="app/src/main/res/layout/fragment_slideshow.xml" value="0.1984375" />
         <entry key="app/src/main/res/layout/item_ads.xml" value="0.1984375" />
         <entry key="app/src/main/res/layout/item_confer_header.xml" value="0.18177083333333333" />
@@ -57,6 +58,7 @@
         <entry key="app/src/main/res/layout/item_schedule.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/item_schedule2.xml" value="0.1828125" />
         <entry key="app/src/main/res/layout/item_study.xml" value="0.19739583333333333" />
+        <entry key="app/src/main/res/layout/item_user_profile.xml" value="0.1572072072072072" />
         <entry key="app/src/main/res/layout/item_video.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/nav_header_main.xml" value="0.1828125" />
         <entry key="app/src/main/res/menu/activity_main_drawer.xml" value="0.1828125" />
