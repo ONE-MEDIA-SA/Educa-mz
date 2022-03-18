@@ -35,7 +35,7 @@
                            android:text="Agenda de hoje"
                            android:textAppearance="@style/TextAppearance.AppCompat.Title" />
 
-                   <include layout="@layout/item_schedule"/>
+                   <include layout="@layout/item_schedule2"/>
 
                </LinearLayout>
 
