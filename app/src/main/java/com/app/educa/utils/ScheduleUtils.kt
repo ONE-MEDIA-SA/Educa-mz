@@ -14,6 +14,6 @@ class ScheduleUtils {
     )
 
     fun lessBrightColor(color: FloatArray): Int {
-        return Color.HSVToColor(floatArrayOf(color[0], 0.2f, color[2]))
+        return Color.HSVToColor(floatArrayOf(color[0], 0.1f, color[2]))
     }
 }
