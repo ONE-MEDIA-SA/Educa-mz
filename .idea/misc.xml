@@ -10,6 +10,8 @@
         <entry key="app/src/main/res/drawable/bg_gradient_foreground.xml" value="0.161" />
         <entry key="app/src/main/res/drawable/bg_outline.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/bg_question.xml" value="0.2005" />
+        <entry key="app/src/main/res/drawable/bg_question_error.xml" value="0.172" />
+        <entry key="app/src/main/res/drawable/bg_question_selected.xml" value="0.172" />
         <entry key="app/src/main/res/drawable/bg_rounded_input_field.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/bg_search.xml" value="0.206" />
         <entry key="app/src/main/res/drawable/btn_grey_rounded_normal.xml" value="0.1825" />
