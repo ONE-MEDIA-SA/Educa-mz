@@ -7,6 +7,8 @@ import com.app.educa.R
 
 class GameActivity : AppCompatActivity() {
 
+    lateinit var binding: ActivityGameBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game)
