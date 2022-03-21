@@ -7,6 +7,7 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import com.app.educa.R
 import com.app.educa.databinding.ActivityGameBinding
+import com.app.educa.model.Question
 
 class GameActivity : AppCompatActivity() {
 
@@ -21,6 +22,10 @@ class GameActivity : AppCompatActivity() {
     lateinit var tv_option_4: TextView
     lateinit var progressBar: ProgressBar
 
+    private var mCurrentPosition: Int = 1
+    private var mQuestionList: ArrayList<Question>? = null
+    private var mSelectedOptionPosition: Int = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityGameBinding.inflate(layoutInflater)
@@ -31,6 +36,9 @@ class GameActivity : AppCompatActivity() {
 
         initViews()
         handleClick()
+
+        mQuestionList = Constants.getQuestions()
+        setQuestion()
 
     }
 
