@@ -3,7 +3,7 @@
     package="com.app.educa">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -12,7 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Educa">
-
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -20,7 +22,11 @@
 
         <activity
             android:name=".ui.activity.GalleryActivity"
-            android:exported="false"/>
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.activity.OnboardingActivity"
+            android:exported="false" />
 
         <activity
             android:name=".ui.activity.MapsActivity"
@@ -58,7 +64,7 @@
             android:name=".ui.activity.ExhibitorPageActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.activity.SplashActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.Educa.NoActionBar">

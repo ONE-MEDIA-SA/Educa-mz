@@ -7,10 +7,10 @@ import android.view.ViewGroup
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.fragment.app.Fragment
 import com.airbnb.lottie.LottieAnimationView
-import com.thecode.onboardingviewagerexamples.R
-import kotlinx.android.synthetic.main.fragment_onboarding4.view.*
+import com.app.educa.R
 
-class OnboardingFragment4 : Fragment() {
+
+class OnboardingFragment : Fragment() {
     private lateinit var title: String
     private lateinit var description: String
     private var imageResource = 0
@@ -33,10 +33,10 @@ class OnboardingFragment4 : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val rootLayout: View =
-            inflater.inflate(R.layout.fragment_onboarding4, container, false)
-        tvTitle = rootLayout.text_onboarding_title
-        tvDescription = rootLayout.text_onboarding_description
-        image = rootLayout.image_onboarding
+            inflater.inflate(R.layout.fragment_onboarding, container, false)
+        tvTitle = rootLayout.findViewById(R.id.text_onboarding_title)
+        tvDescription = rootLayout.findViewById(R.id.text_onboarding_description)
+        image = rootLayout.findViewById(R.id.image_onboarding)
         tvTitle.text = title
         tvDescription.text = description
         image.setAnimation(imageResource)
@@ -52,8 +52,8 @@ class OnboardingFragment4 : Fragment() {
             title: String?,
             description: String?,
             imageResource: Int
-        ): OnboardingFragment4 {
-            val fragment = OnboardingFragment4()
+        ): OnboardingFragment {
+            val fragment = OnboardingFragment()
             val args = Bundle()
             args.putString(ARG_PARAM1, title)
             args.putString(ARG_PARAM2, description)
