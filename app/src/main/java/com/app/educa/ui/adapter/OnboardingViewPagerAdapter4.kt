@@ -4,9 +4,8 @@ import android.content.Context
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.thecode.onboardingviewagerexamples.R
-import com.thecode.onboardingviewagerexamples.fragments.OnboardingFragment4
-
+import com.app.educa.R
+import com.app.educa.ui.fragment.OnboardingFragment4
 
 class OnboardingViewPagerAdapter4(
     fragmentActivity: FragmentActivity,
