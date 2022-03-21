@@ -28,7 +28,7 @@ class OnboardingViewPagerAdapter(
             else -> OnboardingFragment.newInstance(
                 context.resources.getString(R.string.title_onboarding_3),
                 context.resources.getString(R.string.description_onboarding_3),
-                R.raw.lottie_girl_with_a_notebook
+                R.raw.learn
             )
         }
     }
