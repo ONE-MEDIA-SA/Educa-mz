@@ -49,7 +49,8 @@
                 app:elevation="0dp"
                 app:fabSize="mini"
                 app:srcCompat="@drawable/ic_favorite"
-                app:tint="#e7e8ef" />
+                app:tint="#DCDFF1" />
+
             <TextView
                 android:id="@+id/tv_exhibitor_category"
                 android:layout_width="wrap_content"
@@ -57,14 +58,14 @@
                 android:layout_alignParentBottom="true"
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/bg_border"
-                android:backgroundTint="#E6F89D42"
-                android:textSize="10sp"
+                android:backgroundTint="#E6FFA953"
                 android:paddingStart="14dp"
                 android:paddingTop="2dp"
                 android:paddingEnd="14dp"
                 android:paddingBottom="2dp"
                 android:text="Tecnologia"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:textSize="10sp" />
         </RelativeLayout>
     </LinearLayout>
 

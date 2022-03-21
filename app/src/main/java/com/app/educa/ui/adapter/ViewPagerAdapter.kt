@@ -6,7 +6,8 @@ import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.app.educa.ui.fragment.AboutFragment
 import com.app.educa.ui.fragment.ProductFragment
-import com.app.educa.ui.fragment.GalleryFragment
+import com.app.educa.ui.activity.GalleryActivity
+import com.app.educa.ui.fragment.ExhibitorGalleryFragment
 
 private const val NUM_TABS = 3
 
@@ -19,7 +20,7 @@ public class ViewPagerAdapter(fragmentManager: FragmentManager, lifecycle: Lifec
     override fun createFragment(position: Int): Fragment {
         when (position){
             0 -> return  ProductFragment()
-            1 -> return GalleryFragment()
+            1 -> return ExhibitorGalleryFragment()
         }
         return AboutFragment()
     }

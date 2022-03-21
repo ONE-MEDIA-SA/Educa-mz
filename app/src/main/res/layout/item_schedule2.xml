@@ -5,16 +5,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="10dp"
     android:layout_margin="10dp"
-    app:cardBackgroundColor="#ffe4c5"
-    >
+    app:cardBackgroundColor="#e2f8f9">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <View
             android:layout_width="10dp"
             android:layout_height="match_parent"
-            android:background="#E6F2871C"
-            />
+            android:background="@color/blue"/>
+
         <LinearLayout
             android:orientation="vertical"
             android:layout_marginStart="10dp"

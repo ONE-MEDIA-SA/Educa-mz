@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
 }
 
 android {
@@ -12,7 +13,6 @@ android {
         targetSdk 32
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -54,6 +54,7 @@ dependencies {
     // Glide
     implementation 'com.github.bumptech.glide:glide:4.13.0'
     implementation 'androidx.annotation:annotation:1.2.0'
+    implementation 'com.google.android.gms:play-services-maps:17.0.1'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.13.0'
     // matieral_dialogs
     implementation "com.afollestad.material-dialogs:core:3.1.0"

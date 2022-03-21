@@ -59,7 +59,7 @@ tools:context=".ui.fragment.HomeFragment">
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Descubra novos"
+                            android:text="Seja bem vindo"
                             android:textAppearance="?attr/textAppearanceHeadline6"
                             android:textSize="18sp" />
 
@@ -67,7 +67,7 @@ tools:context=".ui.fragment.HomeFragment">
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
-                            android:text="Hint new books before other" />
+                            android:text="Acompanhe a feira e conferência" />
                     </LinearLayout>
 
                     <com.google.android.material.button.MaterialButton

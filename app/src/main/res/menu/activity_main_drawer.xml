@@ -16,12 +16,6 @@
             android:id="@+id/nav_schedule"
             android:icon="@drawable/ic_event"
             android:title="@string/menu_schedule" />
-
-        <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_gallery" />
-
         <item
             android:id="@+id/nav_game"
             android:icon="@drawable/ic_games"
@@ -30,5 +24,9 @@
             android:id="@+id/nav_favorite"
             android:icon="@drawable/ic_favorite_border"
             android:title="@string/menu_favorite" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/menu_gallery" />
     </group>
 </menu>

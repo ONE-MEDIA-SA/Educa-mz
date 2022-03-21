@@ -64,7 +64,7 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_profile -> {
-                if (true) {
+                if (false) {
                     showProfileDialog()
                 } else {
                     Intent(this, RegisterActivity::class.java).also {

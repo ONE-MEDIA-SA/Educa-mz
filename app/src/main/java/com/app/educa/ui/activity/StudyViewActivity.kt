@@ -35,7 +35,6 @@ class StudyViewActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         query = intent.getStringExtra("query").toString()
-        Toast.makeText(this, query, Toast.LENGTH_SHORT).show()
 
         BASE_URL = "https://www.google.com/search?q=$query"
         webView = binding.webview

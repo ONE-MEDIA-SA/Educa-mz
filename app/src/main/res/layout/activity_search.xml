@@ -41,6 +41,7 @@
                         android:layout_height="wrap_content"
                         android:paddingStart="15dp"
                         android:paddingEnd="10dp"
+                        android:imeOptions="actionSearch"
                         android:hint="Pesquisar, ex: &quot;Botanica, mecanica&quot;"
                         android:background="@android:color/transparent"
                         android:layout_gravity="center_vertical"
@@ -71,8 +72,10 @@
         android:scrollbarSize="0dp">
 
         <LinearLayout
+            android:id="@+id/ll_chips"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:visibility="gone"
             android:layout_marginTop="10dp"
             android:orientation="horizontal">
 
@@ -133,13 +136,7 @@
                     android:layout_height="wrap_content"
                     android:text="4 ano" />
 
-
             </com.google.android.material.chip.ChipGroup>
-
-
         </LinearLayout>
-
-
     </HorizontalScrollView>
-
 </LinearLayout>
