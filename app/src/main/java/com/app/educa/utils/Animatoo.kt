@@ -2,8 +2,7 @@ package com.app.educa.utils
 
 import android.app.Activity
 import android.content.Context
-import com.thecode.onboardingviewagerexamples.R
-
+import com.app.educa.R
 
 object Animatoo {
     fun animateZoom(context: Context) {
