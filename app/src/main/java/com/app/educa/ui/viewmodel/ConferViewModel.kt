@@ -11,11 +11,14 @@ class ConferViewModel : ViewModel() {
     private val _exhibitor = MutableLiveData<List<Exhibitor>>().apply {
         value = listOf(
             Exhibitor("Twitch LLC", "Tecnologia" ,"https://purepng.com/public/uploads/large/twitch-prime-logo-high-resolution-hpc.png"),
-            Exhibitor("Instituto de Tecnologia de Massachusetts", "Educação" ,"https://logoeps.com/wp-content/uploads/2012/12/bank-of-hawaii-logo-vector-200x200.png"),
+            Exhibitor("Instituto de Tecnologia de Massachusetts", "Educação" ,"https://e7.pngegg.com/pngimages/499/718/png-clipart-adidas-logo-adidas-logo-k-o-sports-brand-adidas-angle-text-thumbnail.png"),
             Exhibitor("Google LLC", "Tecnologia" ,"https://logoeps.com/wp-content/uploads/2012/12/apple-classic-logo-vector-200x200.png"),
             Exhibitor("Microsoft Corporation", "Tecnologia" ,"https://logoeps.com/wp-content/uploads/2012/12/bank-of-hawaii-logo-vector-200x200.png"),
             Exhibitor("Instituto de Tecnologia de Massachusetts", "Educação" ,"https://logoeps.com/wp-content/uploads/2012/12/bank-of-hawaii-logo-vector-200x200.png"),
-        )
+            Exhibitor("Instituto de Tecnologia de Massachusetts", "Educação" ,"https://e7.pngegg.com/pngimages/499/718/png-clipart-adidas-logo-adidas-logo-k-o-sports-brand-adidas-angle-text-thumbnail.png"),
+            Exhibitor("Google LLC", "Tecnologia" ,"https://logoeps.com/wp-content/uploads/2012/12/apple-classic-logo-vector-200x200.png"),
+            Exhibitor("Microsoft Corporation", "Tecnologia" ,"https://logoeps.com/wp-content/uploads/2012/12/bank-of-hawaii-logo-vector-200x200.png"),
+            )
     }
     private val _text = MutableLiveData<String>().apply {
         value = "This is gallery Fragment"
