@@ -37,6 +37,7 @@
         <entry key="app/src/main/res/drawable/onboarding_viewpager_selector_blue.xml" value="0.1645" />
         <entry key="app/src/main/res/drawable/onboarding_viewpager_selector_orange.xml" value="0.185" />
         <entry key="app/src/main/res/layout-w936dp/activity_onboarding_example4.xml" value="0.137109375" />
+        <entry key="app/src/main/res/layout/activity_exhibitor_content.xml" value="0.1572072072072072" />
         <entry key="app/src/main/res/layout/activity_exhibitor_page.xml" value="0.17117117117117117" />
         <entry key="app/src/main/res/layout/activity_favorite.xml" value="0.12252252252252252" />
         <entry key="app/src/main/res/layout/activity_forgot_password.xml" value="0.1" />
