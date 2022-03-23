@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.app.educa.databinding.ItemProductHBinding
 import com.app.educa.model.Product
+import com.app.educa.ui.activity.ProductDetailsActivity
 import com.bumptech.glide.Glide
 
 class ProductAdapter : ListAdapter<Product, ProductAdapter.ProductViewHolder>(Companion) {
@@ -42,7 +43,9 @@ class ProductAdapter : ListAdapter<Product, ProductAdapter.ProductViewHolder>(Co
         holder.binding.tvProductName.text = currentList[position].name
         holder.binding.tvProductPrice.text = currentList[position].getFormattedPrice()
         holder.binding.root.setOnClickListener {
-            Toast.makeText(holder.binding.root.context, "Clicked", Toast.LENGTH_SHORT).show()
+            Intent(holder.binding.root.context, ProductDetailsActivity::class.java).apply {
+                holder.binding.root.context.startActivity(this)
+            }
         }
 
     }
