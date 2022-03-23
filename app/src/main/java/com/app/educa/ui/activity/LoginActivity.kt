@@ -18,6 +18,17 @@ class LoginActivity : AppCompatActivity() {
         binding.btnSignup.setOnClickListener {
            checkFields();
         }
+
+        binding.tvRegister.setOnClickListener {
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.tvForgotPassword.setOnClickListener {
+            val intent = Intent(this, ForgotPasswordActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 
     private fun checkFields() {
@@ -34,10 +45,9 @@ class LoginActivity : AppCompatActivity() {
             binding.passwordInputLayout.error = null
 
             Intent(this, MainActivity::class.java).also {
+                it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                 startActivity(it)
             }
-
-            finish()
         }
     }
 
