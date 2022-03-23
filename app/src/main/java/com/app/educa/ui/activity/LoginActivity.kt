@@ -1,7 +1,9 @@
 package com.app.educa.ui.activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.app.educa.MainActivity
 import com.app.educa.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
@@ -31,7 +33,11 @@ class LoginActivity : AppCompatActivity() {
             binding.emailInputLayout.error = null
             binding.passwordInputLayout.error = null
 
+            Intent(this, MainActivity::class.java).also {
+                startActivity(it)
+            }
 
+            finish()
         }
     }
 
