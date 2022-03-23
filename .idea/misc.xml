@@ -10,6 +10,8 @@
         <entry key="app/src/main/res/drawable/bg_gradient_foreground.xml" value="0.161" />
         <entry key="app/src/main/res/drawable/bg_outline.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/bg_question.xml" value="0.2005" />
+        <entry key="app/src/main/res/drawable/bg_question_error.xml" value="0.172" />
+        <entry key="app/src/main/res/drawable/bg_question_selected.xml" value="0.172" />
         <entry key="app/src/main/res/drawable/bg_rounded_input_field.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/bg_search.xml" value="0.206" />
         <entry key="app/src/main/res/drawable/btn_grey_rounded_normal.xml" value="0.1825" />
@@ -35,6 +37,7 @@
         <entry key="app/src/main/res/drawable/onboarding_viewpager_selector_blue.xml" value="0.1645" />
         <entry key="app/src/main/res/drawable/onboarding_viewpager_selector_orange.xml" value="0.185" />
         <entry key="app/src/main/res/layout-w936dp/activity_onboarding_example4.xml" value="0.137109375" />
+        <entry key="app/src/main/res/layout/activity_exhibitor_content.xml" value="0.1572072072072072" />
         <entry key="app/src/main/res/layout/activity_exhibitor_page.xml" value="0.17117117117117117" />
         <entry key="app/src/main/res/layout/activity_favorite.xml" value="0.12252252252252252" />
         <entry key="app/src/main/res/layout/activity_forgot_password.xml" value="0.1" />
@@ -44,6 +47,7 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1984375" />
         <entry key="app/src/main/res/layout/activity_onboarding_example4.xml" value="0.1581081081081081" />
         <entry key="app/src/main/res/layout/activity_profile.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_register.xml" value="0.1581081081081081" />
         <entry key="app/src/main/res/layout/activity_search.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.13603603603603603" />
         <entry key="app/src/main/res/layout/activity_study_view.xml" value="0.17162162162162162" />

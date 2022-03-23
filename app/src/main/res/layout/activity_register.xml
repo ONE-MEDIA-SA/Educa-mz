@@ -106,6 +106,15 @@
                 android:text="Cadastrar"
                 android:textColor="@color/white"
                 android:textStyle="bold" />
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:visibility="gone"
+                tools:visibility="visible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_gravity="center_horizontal"
+                />
 
             <LinearLayout
                 android:orientation="horizontal"
