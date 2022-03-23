@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
 import com.app.educa.R
 import com.app.educa.databinding.ActivityProductDetailsBinding
+import com.app.educa.ui.adapter.AdapterSlider
 import com.app.educa.ui.adapter.ProductAdapter
 import com.app.educa.ui.viewmodel.ProductViewModel
 
@@ -16,11 +17,14 @@ class ProductDetailsActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val productViewModel = ViewModelProvider(this).get(ProductViewModel::class.java)
-        val adapter = ProductAdapter()
+        val adap = ProductAdapter()
 
         productViewModel.products.observe(this) {
-            adapter.submitList(it)
-            binding.rvProduct.adapter = adapter
+            adap.submitList(it)
+            binding.rvProduct.adapter = adap
         }
+
+        var imgs = listOf<Int>(R.drawable.bg,R.drawable.img_video,R.drawable.shoes)
+        binding.pager.adapter = AdapterSlider(imgs,this)
     }
 }

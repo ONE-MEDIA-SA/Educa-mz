@@ -23,7 +23,6 @@
                 android:foregroundGravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
-                android:background="@drawable/img_video"
                 app:layout_constraintTop_toBottomOf="@id/linear"
                 android:id="@+id/pager"
                 />

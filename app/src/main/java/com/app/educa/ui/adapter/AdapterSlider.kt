@@ -26,7 +26,7 @@ class AdapterSlider (var list: List<Int>, var ctx: Context) : PagerAdapter() {
         layoutInflater = LayoutInflater.from(ctx)
 
 
-        var view = layoutInflater.inflate(R.layout.item,container,false)
+        var view = layoutInflater.inflate(R.layout.img_item,container,false)
 
         val img = view.findViewById<ImageView>(R.id.simpleimg)
         img.setImageResource(list[position])
