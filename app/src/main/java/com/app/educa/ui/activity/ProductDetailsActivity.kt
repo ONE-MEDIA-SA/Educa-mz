@@ -26,5 +26,6 @@ class ProductDetailsActivity : AppCompatActivity() {
 
         var imgs = listOf<Int>(R.drawable.bg,R.drawable.img_video,R.drawable.shoes)
         binding.pager.adapter = AdapterSlider(imgs,this)
+        binding.dotsIndicator.setViewPager(binding.pager)
     }
 }
