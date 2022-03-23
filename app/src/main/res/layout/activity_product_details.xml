@@ -8,71 +8,105 @@
     android:orientation="vertical"
     tools:context=".ui.activity.ProductDetailsActivity">
 
-    <LinearLayout
-        android:orientation="vertical"
+    <androidx.core.widget.NestedScrollView
+        app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <androidx.viewpager.widget.ViewPager
-            android:layout_marginVertical="20dp"
-            android:foregroundGravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:background="@drawable/img_video"
-            app:layout_constraintTop_toBottomOf="@id/linear"
-            android:id="@+id/pager"
-            />
+        android:layout_height="wrap_content">
 
         <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:orientation="horizontal"
-            android:layout_marginEnd="10dp">
+            android:layout_height="wrap_content">
+
+            <androidx.viewpager.widget.ViewPager
+                android:layout_marginVertical="20dp"
+                android:foregroundGravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:background="@drawable/img_video"
+                app:layout_constraintTop_toBottomOf="@id/linear"
+                android:id="@+id/pager"
+                />
 
             <LinearLayout
-                android:orientation="vertical"
-                android:layout_weight="1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:orientation="horizontal"
+                android:layout_marginEnd="10dp">
 
-                <TextView
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nike Air Max"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Quantity: 1"
+                        />
+
+
+                </LinearLayout>
+
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btn_exhibitor_favorite"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Nike Air Max"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Quantity: 1"
-                    />
-
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:backgroundTint="#F7F8FA"
+                    app:borderWidth="0dp"
+                    app:elevation="0dp"
+                    app:fabSize="mini"
+                    app:srcCompat="@drawable/ic_favorite"
+                    app:tint="#F43434" />
 
             </LinearLayout>
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/btn_exhibitor_favorite"
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="5dp"
-                android:layout_marginBottom="5dp"
-                android:backgroundTint="#F7F8FA"
-                app:borderWidth="0dp"
-                app:elevation="0dp"
-                app:fabSize="mini"
-                app:srcCompat="@drawable/ic_favorite"
-                app:tint="#F43434" />
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="The Nike emblem is one of the most iconic and popular logos in history. The swoosh is so famous that most of the company’"
+                />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceListItem"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="14dp"
+                android:text="Mais do vendedor "/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_product"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/item_product_h"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="100dp"/>
         </LinearLayout>
 
+    </androidx.core.widget.NestedScrollView>
 
-
-    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
