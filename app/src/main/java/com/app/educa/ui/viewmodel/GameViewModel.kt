@@ -21,11 +21,11 @@ class GameViewModel: ViewModel() {
     val currentQuestion: MutableLiveData<Int>
         get() = _currentQuestion
 
-    private fun incrementCorrectAnswers() {
+    fun incrementCorrectAnswers() {
         _correctAnswers.value = _correctAnswers.value?.plus(1)
     }
 
-    private fun incrementWrongAnswers() {
+    fun incrementWrongAnswers() {
         _wrongAnswers.value = _wrongAnswers.value?.plus(1)
     }
 

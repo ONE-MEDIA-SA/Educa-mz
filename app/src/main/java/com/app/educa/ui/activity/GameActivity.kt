@@ -13,6 +13,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
+import com.app.educa.MainActivity
 import com.app.educa.R
 import com.app.educa.databinding.ActivityGameBinding
 import com.app.educa.model.Question
@@ -76,7 +77,7 @@ class GameActivity : AppCompatActivity() {
            //TODO btn_submit.text = "Submit"
         }
 
-        binding.pbScore.progress = mCurrentPosition / binding.pbScore.max
+        binding.pbScore.progress = (mQuestionList!!.size -1) * mCurrentPosition
 
         binding.tvQuestion.text = question.question
         binding.tvOption1.text = question.optionOne
@@ -137,15 +138,20 @@ class GameActivity : AppCompatActivity() {
                             this,
                             "You have successfully completed the Quiz", Toast.LENGTH_SHORT
                         ).show()
-                        val intent = Intent(this,GameActivity::class.java)
+                        val intent = Intent(this, MainActivity::class.java)
                         startActivity(intent)
+                        finish()
                     }
                 }
             } else {
                 val question = mQuestionList?.get(mCurrentPosition - 1)
                 if (question!!.correctOption != mSelectedOptionPosition) {
                     answerView(mSelectedOptionPosition, R.drawable.bg_question_error)
+                    gameViewModel.incrementWrongAnswers()
+                } else {
+                    gameViewModel.incrementCorrectAnswers()
                 }
+
                 answerView(question.correctOption, R.drawable.bg_outline)
                 if (mCurrentPosition == mQuestionList!!.size) {
                     //TODO btn_submit.text = "Finish"
