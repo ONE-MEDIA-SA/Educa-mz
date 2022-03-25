@@ -11,10 +11,12 @@ import android.view.WindowManager
 import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
 import com.app.educa.R
 import com.app.educa.databinding.ActivityGameBinding
 import com.app.educa.model.Question
+import com.app.educa.ui.viewmodel.GameViewModel
 import com.app.educa.utils.Constants
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -28,6 +30,8 @@ class GameActivity : AppCompatActivity() {
     private var mCurrentPosition: Int = 1
     private var mQuestionList: ArrayList<Question>? = null
     private var mSelectedOptionPosition: Int = 0
+
+    val gameViewModel: GameViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,8 +49,17 @@ class GameActivity : AppCompatActivity() {
         binding.tvOption3.setOnClickListener { onClick(it) }
         binding.tvOption4.setOnClickListener { onClick(it) }
 
-        binding.pbScore.setOnClickListener{
-            Toast.makeText(this, "Score", Toast.LENGTH_SHORT).show()
+        gameViewModel.score.value = mQuestionList!!.size
+        gameViewModel.score.observe(this, androidx.lifecycle.Observer {
+            binding.tvTotalQuestion.text = it.toString()
+        })
+
+        gameViewModel.correctAnswers.observe(this, androidx.lifecycle.Observer {
+            binding.tvWinCount.text = it.toString()
+        })
+
+        gameViewModel.wrongAnswers.observe(this) {
+            binding.tvLostCount.text = it.toString()
         }
 
     }
@@ -92,7 +105,6 @@ class GameActivity : AppCompatActivity() {
     }
 
     fun onClick(v: View?) {
-        Toast.makeText(this, "Clicked", Toast.LENGTH_SHORT).show()
         when (v?.id) {
             R.id.tv_option_1 -> {
                 selectedOptionView(binding.tvOption1, 1)
