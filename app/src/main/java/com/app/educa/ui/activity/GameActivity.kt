@@ -16,8 +16,12 @@ import com.app.educa.R
 import com.app.educa.databinding.ActivityGameBinding
 import com.app.educa.model.Question
 import com.app.educa.utils.Constants
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
-class GameActivity : AppCompatActivity(), View.OnClickListener {
+class GameActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityGameBinding
 
@@ -36,10 +40,10 @@ class GameActivity : AppCompatActivity(), View.OnClickListener {
         mQuestionList = Constants.getQuestions()
         setQuestion()
 
-        binding.tvOption1.setOnClickListener { this }
-        binding.tvOption2.setOnClickListener { this }
-        binding.tvOption3.setOnClickListener { this }
-        binding.tvOption4.setOnClickListener { this }
+        binding.tvOption1.setOnClickListener { onClick(it) }
+        binding.tvOption2.setOnClickListener { onClick(it) }
+        binding.tvOption3.setOnClickListener { onClick(it) }
+        binding.tvOption4.setOnClickListener { onClick(it) }
 
         binding.pbScore.setOnClickListener{
             Toast.makeText(this, "Score", Toast.LENGTH_SHORT).show()
@@ -87,8 +91,7 @@ class GameActivity : AppCompatActivity(), View.OnClickListener {
 
     }
 
-    override fun onClick(v: View?) {
-        println("hiii")
+    fun onClick(v: View?) {
         Toast.makeText(this, "Clicked", Toast.LENGTH_SHORT).show()
         when (v?.id) {
             R.id.tv_option_1 -> {
@@ -135,6 +138,12 @@ class GameActivity : AppCompatActivity(), View.OnClickListener {
                 if (mCurrentPosition == mQuestionList!!.size) {
                     //TODO btn_submit.text = "Finish"
                 } else {
+                    GlobalScope.launch(Dispatchers.Main) {
+                        delay(3_000)
+                        mCurrentPosition++
+
+                        setQuestion()
+                    }
                     //TODO btn_submit.text = "Go to next question"
                 }
                 mSelectedOptionPosition = 0

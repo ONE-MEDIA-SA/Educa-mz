@@ -69,13 +69,20 @@
                         android:textAppearance="?android:attr/textAppearanceLarge"
                         />
 
+
+                    <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    </HorizontalScrollView>
+                    
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Quantity: 1"
                         />
-
-
+                    
                 </LinearLayout>
 
 
@@ -143,7 +150,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textStyle="bold"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
             android:text="2500.00 MZN" />
 
         <androidx.appcompat.widget.AppCompatButton

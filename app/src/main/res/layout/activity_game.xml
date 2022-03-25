@@ -173,11 +173,11 @@
         <TextView
             android:id="@+id/tv_option_2"
             android:layout_width="match_parent"
-            android:background="@drawable/bg_outline"
+            android:background="@drawable/bg_question"
             android:text="The food quality is"
             android:layout_marginTop="15dp"
             android:padding="15dp"
-            android:drawableEnd="@drawable/ic_baseline_check_circle_24"
+            android:drawableEnd="@drawable/ic_outline_circle_24"
             android:layout_height="wrap_content">
         </TextView>
 
