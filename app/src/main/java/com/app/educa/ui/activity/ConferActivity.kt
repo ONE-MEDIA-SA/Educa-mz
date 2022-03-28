@@ -14,13 +14,18 @@ import com.app.educa.ui.viewmodel.ConferViewModel
 
 class ConferActivity : AppCompatActivity() {
 
-    lateinit var binding: FragmentConferBinding
+    lateinit var binding: ActivityConferBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = FragmentConferBinding.inflate(layoutInflater)
+        binding = ActivityConferBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        setSupportActionBar(binding.toolbar)
+        binding.toolbar.title = "Feira"
+        supportActionBar?.setDisplayHomeAsUpEnabled(true);
+        supportActionBar?.setDisplayShowHomeEnabled(true)
 
         val conferViewModel =
             ViewModelProvider(this).get(ConferViewModel::class.java)
