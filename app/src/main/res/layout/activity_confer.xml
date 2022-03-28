@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".ui.fragment.ConferFragment">
+    tools:context=".ui.activity.ConferActivity">
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
