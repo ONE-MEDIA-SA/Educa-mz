@@ -8,10 +8,18 @@ android:orientation="vertical"
 android:layout_height="wrap_content"
 tools:context=".ui.activity.GalleryActivity">
 
+
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:translationZ="1dp"
         android:outlineProvider="none"
+        android:foreground="@android:color/transparent"
+        android:background="@drawable/bg_border"
         android:theme="@style/Theme.Educa.AppBarOverlay">
 
         <androidx.appcompat.widget.Toolbar
@@ -19,11 +27,12 @@ tools:context=".ui.activity.GalleryActivity">
             android:layout_width="match_parent"
             android:background="@android:color/transparent"
             android:layout_height="?attr/actionBarSize"
-            app:title="Title here"
+            app:title="Feira"
             app:popupTheme="@style/Theme.Educa.PopupOverlay">
         </androidx.appcompat.widget.Toolbar>
 
     </com.google.android.material.appbar.AppBarLayout>
+
 
     <LinearLayout
         android:orientation="vertical"

@@ -18,6 +18,7 @@
             android:theme="@style/Theme.Educa.NoActionBar" />
 
         <activity android:name=".ui.activity.ConferActivity"
+            android:parentActivityName=".MainActivity"
             android:exported="false"/>
         <activity
             android:name=".MainActivity"
