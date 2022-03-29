@@ -25,12 +25,10 @@ class ProductFragment : Fragment(R.layout.fragment_list) {
         _binding = FragmentListBinding.bind(view)
         val productViewModel = ViewModelProvider(this).get(ProductViewModel::class.java)
         val adapter = ProductAdapter()
-       // val extra = requireActivity().intent.getStringExtra("exhibitor")
+        //val extra = requireActivity().intent.getStringExtra("exhibitor")
         val exhibitor = requireActivity().intent.getSerializableExtra("exhibitor") as? Exhibitor
         if (exhibitor != null) {
-
         } else {
-            Toast.makeText(requireContext(), "No se pudo obtener el exhibitor", Toast.LENGTH_SHORT).show()
         }
 
         productViewModel.products.observe(viewLifecycleOwner) {

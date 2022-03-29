@@ -7,10 +7,10 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.viewpager.widget.PagerAdapter
 import com.app.educa.R
+import com.bumptech.glide.Glide
 
-class AdapterSlider (var list: List<Int>, var ctx: Context) : PagerAdapter() {
+class AdapterSlider (var list: List<String>, var ctx: Context) : PagerAdapter() {
 
-    private lateinit var ImgList:List<Int>
     lateinit var layoutInflater: LayoutInflater
     lateinit var context:Context
 
@@ -25,11 +25,13 @@ class AdapterSlider (var list: List<Int>, var ctx: Context) : PagerAdapter() {
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
         layoutInflater = LayoutInflater.from(ctx)
 
-
         var view = layoutInflater.inflate(R.layout.img_item,container,false)
-
         val img = view.findViewById<ImageView>(R.id.simpleimg)
-        img.setImageResource(list[position])
+
+        Glide
+            .with(view.context)
+            .load(list[position])
+            .into(img)
 
         container.addView(view,0)
         return view
