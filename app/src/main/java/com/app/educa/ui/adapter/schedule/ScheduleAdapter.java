@@ -54,7 +54,9 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.ViewHo
 
         holder.view_left_bar.setBackgroundColor(Color.HSVToColor(arr));
         holder.card_schedule.setCardBackgroundColor(utils.lessBrightColor(arr));
-        holder.tv_time.setText(schedule.getDate());
+        holder.tv_time.setText(schedule.getStart_time() + " - " + schedule.getEnd_time() +"H");
+        holder.tv_title.setText(schedule.getTitle());
+        holder.tv_date.setText(schedule.getDate());
 
 
 
@@ -83,7 +85,7 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.ViewHo
             view_left_bar = itemView.findViewById(R.id.view_left_bar);
             card_schedule = itemView.findViewById(R.id.card_schedule);
             tv_date = itemView.findViewById(R.id.tv_date);
-            tv_time = itemView.findViewById(R.id.schedule_title);
+            tv_time = itemView.findViewById(R.id.schedule_time);
             tv_title = itemView.findViewById(R.id.schedule_title);
         }
     }

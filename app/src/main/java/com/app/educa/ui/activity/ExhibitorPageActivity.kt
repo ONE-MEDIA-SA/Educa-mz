@@ -4,9 +4,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.app.educa.databinding.ActivityExhibitorPageBinding
+import com.app.educa.model.Exhibitor
 import com.app.educa.ui.adapter.ViewPagerAdapter
 import com.app.educa.utils.ActionBottom
 import com.app.educa.utils.ItemClickListener
+import com.bumptech.glide.Glide
 import com.google.android.material.tabs.TabLayoutMediator
 
 val menuArray = arrayOf(
@@ -24,6 +26,11 @@ class ExhibitorPageActivity : AppCompatActivity(),ItemClickListener {
         binding = ActivityExhibitorPageBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val exhibitor = intent.getSerializableExtra("exhibitor") as? Exhibitor
+
+        if (exhibitor != null) {
+            updateUi(exhibitor)
+        }
         val viewPager = binding.viewPager
         val tabLayout = binding.tabLayout
 
@@ -34,17 +41,15 @@ class ExhibitorPageActivity : AppCompatActivity(),ItemClickListener {
             tab.text = menuArray[position]
         }.attach()
 
-        binding.rounded.setOnClickListener {
-            openBottomSheet()
-        }
-
     }
 
-    fun openBottomSheet(){
-        val addPhotoBottomDialogFragment = ActionBottom.newInstance()
-        addPhotoBottomDialogFragment.show(
-            supportFragmentManager,ActionBottom.TAG
-        )
+    private fun updateUi(exhibitor: Exhibitor) {
+        binding.tvExhibitorName.text = exhibitor.name
+        binding.tvExhibitorCategory.text = exhibitor.category
+        Glide
+            .with(this)
+            .load(exhibitor.profile)
+            .into(binding.ivExhibitorLogo)
     }
 
     override fun onItemClick(item: String?) {

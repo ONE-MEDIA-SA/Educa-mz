@@ -2,7 +2,7 @@ package com.app.educa.model
 
 data class Schedule(
     val id: Int,
-    val name: String,
+    val title: String,
     val description: String,
     val date: String,
     val start_time: String,
