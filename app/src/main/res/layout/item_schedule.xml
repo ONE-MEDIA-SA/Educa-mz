@@ -1,78 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/card_schedule"
-    android:layout_width="match_parent"
-    android:layout_height="150dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    app:cardCornerRadius="10dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
     android:layout_marginStart="10dp"
     android:layout_marginEnd="10dp"
-    android:layout_marginBottom="10dp"
-    app:cardBackgroundColor="#e2f8f9">
-    <LinearLayout
+    android:layout_marginBottom="10dp">
+
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="29 de março de 2022"
+        android:layout_marginBottom="10dp"
+        />
+
+    <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/card_schedule"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <View
-            android:id="@+id/view_left_bar"
-            android:layout_width="10dp"
-            android:layout_height="match_parent"
-            android:background="@color/blue"
-            />
+        android:layout_height="150dp"
+        app:cardCornerRadius="10dp"
+        app:cardBackgroundColor="#e2f8f9">
         <LinearLayout
-            android:orientation="vertical"
-            android:layout_marginStart="10dp"
-            android:layout_gravity="center_vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/schedule_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Test title schedule"
-                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"/>
-
-            <TextView
-                android:id="@+id/schedule_time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="09:00  -  16:00H"
-                android:layout_marginTop="6dp"
-                android:layout_marginBottom="10dp"/>
+            android:layout_height="match_parent">
+            <View
+                android:id="@+id/view_left_bar"
+                android:layout_width="10dp"
+                android:layout_height="match_parent"
+                android:background="@color/blue"
+                />
             <LinearLayout
+                android:orientation="vertical"
+                android:layout_marginStart="10dp"
+                android:layout_gravity="center_vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
+                android:layout_height="wrap_content">
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_users"
+                <TextView
+                    android:id="@+id/schedule_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="As Tecnologias na Educação"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"/>
+
+                <TextView
+                    android:id="@+id/schedule_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="09:00  -  16:00H"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginBottom="10dp"/>
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    tools:itemCount="3"
-                    tools:listitem="@layout/item_user_profile" />
+                    android:layout_marginTop="10dp">
 
-                <com.makeramen.roundedimageview.RoundedImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:scaleType="centerCrop"
-                    android:layout_marginStart="4dp"
-                    app:riv_corner_radius="50dp"
-                    android:src="@drawable/person3"/>
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_users"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:itemCount="3"
+                        tools:listitem="@layout/item_user_profile" />
 
-                <com.makeramen.roundedimageview.RoundedImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:scaleType="centerCrop"
-                    android:layout_marginStart="4dp"
-                    app:riv_corner_radius="50dp"
-                    android:src="@drawable/profile1"/>
 
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
 
-</com.google.android.material.card.MaterialCardView>
+    </com.google.android.material.card.MaterialCardView>
+
+</LinearLayout>

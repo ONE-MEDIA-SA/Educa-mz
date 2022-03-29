@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -53,6 +54,8 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.ViewHo
 
         holder.view_left_bar.setBackgroundColor(Color.HSVToColor(arr));
         holder.card_schedule.setCardBackgroundColor(utils.lessBrightColor(arr));
+        holder.tv_time.setText(schedule.getDate());
+
 
 
         ScheduleAdapterMember adapterMember = new ScheduleAdapterMember(scheduleUserArrayList);
@@ -70,12 +73,18 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.ViewHo
         RecyclerView nested_rv;
         View view_left_bar;
         MaterialCardView card_schedule;
+        TextView tv_date;
+        TextView tv_time;
+        TextView tv_title;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             nested_rv = itemView.findViewById(R.id.rv_users);
             view_left_bar = itemView.findViewById(R.id.view_left_bar);
             card_schedule = itemView.findViewById(R.id.card_schedule);
+            tv_date = itemView.findViewById(R.id.tv_date);
+            tv_time = itemView.findViewById(R.id.schedule_title);
+            tv_title = itemView.findViewById(R.id.schedule_title);
         }
     }
 
