@@ -2,7 +2,7 @@
   <a href="https://github.com/agostinhodossantos">
   <img height="600em" src="https://raw.githubusercontent.com/Agostinhodossantos/Educa-mz/main/screenshoot/onboaring.jpg "/>
   <img height="600em" src="https://raw.githubusercontent.com/Agostinhodossantos/Educa-mz/main/screenshoot/main.jpg"/>
-  <img height="600em" src="https://raw.githubusercontent.com/Agostinhodossantos/Educa-mz/main/screenshoot/confer.jpg"/>
+  <img height="600em" src="https://raw.githubusercontent.com/Agostinhodossantos/Educa-mz/main/screenshoot/conferr.jpg"/>
 </div>
 
 
