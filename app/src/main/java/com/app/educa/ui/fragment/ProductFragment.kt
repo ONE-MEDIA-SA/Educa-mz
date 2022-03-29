@@ -27,8 +27,11 @@ class ProductFragment : Fragment(R.layout.fragment_list) {
         val adapter = ProductAdapter()
        // val extra = requireActivity().intent.getStringExtra("exhibitor")
         val exhibitor = requireActivity().intent.getSerializableExtra("exhibitor") as? Exhibitor
+        if (exhibitor != null) {
 
-        Toast.makeText(requireContext(), exhibitor!!.name, Toast.LENGTH_SHORT).show()
+        } else {
+            Toast.makeText(requireContext(), "No se pudo obtener el exhibitor", Toast.LENGTH_SHORT).show()
+        }
 
         productViewModel.products.observe(viewLifecycleOwner) {
 
