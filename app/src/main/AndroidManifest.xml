@@ -29,7 +29,8 @@
             android:value="${GOOGLE_MAP_API_KEY}" />
 
         <activity
-            android:name=".ui.activity.GalleryActivity"
+            android:name=".ui.activity.WebinarActivity"
+            android:parentActivityName=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".ui.activity.OnboardingActivity"

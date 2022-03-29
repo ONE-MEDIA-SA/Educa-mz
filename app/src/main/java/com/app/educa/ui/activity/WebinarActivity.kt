@@ -14,7 +14,7 @@ import com.app.educa.ui.adapter.WebinarAdapter
 import com.app.educa.ui.viewmodel.GalleryViewModel
 import com.app.educa.ui.viewmodel.ProductViewModel
 
-class GalleryActivity  : AppCompatActivity() {
+class WebinarActivity  : AppCompatActivity() {
 
     private lateinit var toolbar: Toolbar
 
@@ -27,7 +27,7 @@ class GalleryActivity  : AppCompatActivity() {
 
 
         setSupportActionBar(binding.toolbar)
-        binding.toolbar.title = "Galeria"
+        binding.toolbar.title = "Webinars"
         supportActionBar?.setDisplayHomeAsUpEnabled(true);
         supportActionBar?.setDisplayShowHomeEnabled(true)
 
