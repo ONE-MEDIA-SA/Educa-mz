@@ -10,6 +10,7 @@ import com.app.educa.R
 import com.app.educa.databinding.ActivityGalleryBinding
 import com.app.educa.ui.adapter.GalleryAdapter
 import com.app.educa.ui.adapter.ProductAdapter
+import com.app.educa.ui.adapter.WebinarAdapter
 import com.app.educa.ui.viewmodel.GalleryViewModel
 import com.app.educa.ui.viewmodel.ProductViewModel
 
@@ -31,12 +32,12 @@ class GalleryActivity  : AppCompatActivity() {
         supportActionBar?.setDisplayShowHomeEnabled(true)
 
         val galleryViewModel = ViewModelProvider(this).get(GalleryViewModel::class.java)
-        val adapter = GalleryAdapter()
+        val adapter = WebinarAdapter()
 
         galleryViewModel.images.observe(this) {
 
             adapter.submitList(it)
-            binding.rvGallery.layoutManager = StaggeredGridLayoutManager(3, LinearLayoutManager.VERTICAL)
+            binding.rvGallery.layoutManager = StaggeredGridLayoutManager(1, LinearLayoutManager.VERTICAL)
             binding.rvGallery.adapter = adapter
         }
 

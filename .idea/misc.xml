@@ -84,6 +84,7 @@
         <entry key="app/src/main/res/layout/item_study.xml" value="0.19739583333333333" />
         <entry key="app/src/main/res/layout/item_user_profile.xml" value="0.1572072072072072" />
         <entry key="app/src/main/res/layout/item_video.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/item_webinar.xml" value="0.25" />
         <entry key="app/src/main/res/layout/nav_header_main.xml" value="0.1828125" />
         <entry key="app/src/main/res/menu/activity_main_drawer.xml" value="0.1828125" />
         <entry key="app/src/main/res/menu/main.xml" value="0.15" />
