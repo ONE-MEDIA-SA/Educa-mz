@@ -8,4 +8,9 @@ data class Schedule(
     val start_time: String,
     val end_time: String,
     val status: String
-)
+) {
+    fun getTime(): String{
+        return "$start_time - $end_time"
+    }
+}
+

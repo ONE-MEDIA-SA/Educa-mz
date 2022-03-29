@@ -51,7 +51,11 @@
                     android:id="@+id/schedule_time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="09:00  -  15:00H"
+                    android:text="09:00  -  15:00"
+                    android:drawableTint="#808080"
+                    android:gravity="center_vertical"
+                    android:drawablePadding="5dp"
+                    android:drawableStart="@drawable/time_small"
                     android:layout_marginTop="6dp"
                     android:layout_marginBottom="10dp"/>
                 <LinearLayout

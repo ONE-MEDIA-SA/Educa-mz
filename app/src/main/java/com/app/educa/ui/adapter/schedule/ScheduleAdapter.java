@@ -54,7 +54,7 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.ViewHo
 
         holder.view_left_bar.setBackgroundColor(Color.HSVToColor(arr));
         holder.card_schedule.setCardBackgroundColor(utils.lessBrightColor(arr));
-        holder.tv_time.setText(schedule.getStart_time() + " - " + schedule.getEnd_time() +"H");
+        holder.tv_time.setText(schedule.getTime());
         holder.tv_title.setText(schedule.getTitle());
         holder.tv_date.setText(schedule.getDate());
 
