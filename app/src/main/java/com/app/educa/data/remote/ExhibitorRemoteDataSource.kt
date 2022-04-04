@@ -3,6 +3,7 @@ package com.app.educa.data.remote
 import com.app.educa.model.ExhibitorResponse
 import com.app.educa.model.Result
 import com.app.educa.network.services.ExhibitorService
+import com.app.educa.utils.ErrorUtils
 import retrofit2.Response
 import retrofit2.Retrofit
 import javax.inject.Inject
@@ -22,7 +23,8 @@ class ExhibitorRemoteDataSource @Inject constructor(private val retrofit: Retrof
             if (result.isSuccessful) {
                 return  Result.success(result.body())
             } else {
-                val errorResponse = ErrorU
+                val errorResponse = ErrorUtils.parseError(result, retrofit)
+                Result.error(errorResponse?.status_message ?: defaultErrorMessage, errorResponse)
             }
         }
     }
