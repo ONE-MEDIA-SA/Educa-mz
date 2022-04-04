@@ -1,4 +1,7 @@
 package com.app.educa
 
-class AppClass {
-}
+import android.app.Application
+import dagger.hilt.android.HiltAndroidApp
+
+@HiltAndroidApp
+class AppClass : Application()
