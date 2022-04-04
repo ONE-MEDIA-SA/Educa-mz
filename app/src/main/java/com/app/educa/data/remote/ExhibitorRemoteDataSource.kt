@@ -13,6 +13,8 @@ class ExhibitorRemoteDataSource @Inject constructor(private val retrofit: Retrof
     suspend fun fetchExhibitors(): Result<ExhibitorResponse> {
         val exhibitorService = retrofit.create(ExhibitorService::class.java)
         return getResponse(
+            request = { exhibitorService.getExhibitors()},
+            defaultErrorMessage = "Error fetching exhibitors list"
         )
     }
 
@@ -26,6 +28,8 @@ class ExhibitorRemoteDataSource @Inject constructor(private val retrofit: Retrof
                 val errorResponse = ErrorUtils.parseError(result, retrofit)
                 Result.error(errorResponse?.status_message ?: defaultErrorMessage, errorResponse)
             }
+        } catch (e: Throwable) {
+            Result.error("Unknown Error", null)
         }
     }
 }

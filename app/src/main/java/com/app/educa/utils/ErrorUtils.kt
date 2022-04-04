@@ -3,6 +3,7 @@ package com.app.educa.utils
 import retrofit2.Response
 import retrofit2.Retrofit
 import java.io.IOException
+import com.app.educa.model.Error
 
 object ErrorUtils {
 
