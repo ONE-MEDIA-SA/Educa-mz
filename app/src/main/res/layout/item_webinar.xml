@@ -27,12 +27,13 @@
                 app:borderWidth="0dp"
                 app:srcCompat="@drawable/ic_play_icon"
                 app:tint="@color/black" />
+
             <com.makeramen.roundedimageview.RoundedImageView
                 android:id="@+id/img_cover"
                 android:layout_width="match_parent"
                 android:layout_height="220dp"
-                android:src="@drawable/img_video"
-                android:scaleType="centerCrop"/>
+                android:scaleType="centerCrop"
+                android:src="@drawable/img_video" />
         </RelativeLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout

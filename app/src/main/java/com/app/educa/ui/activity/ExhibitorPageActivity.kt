@@ -1,5 +1,6 @@
 package com.app.educa.ui.activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -30,6 +31,11 @@ class ExhibitorPageActivity : AppCompatActivity(),ItemClickListener {
 
         if (exhibitor != null) {
             updateUi(exhibitor)
+        }
+
+        binding.btnPlay.setOnClickListener {
+            val intent = Intent(this, YoutubePlayerActivity::class.java)
+            startActivity(intent)
         }
         val viewPager = binding.viewPager
         val tabLayout = binding.tabLayout
