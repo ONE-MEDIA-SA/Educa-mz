@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:background="@android:color/transparent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     tools:context=".MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -13,7 +14,6 @@
         android:layout_marginTop="20dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
         android:translationZ="1dp"
         android:outlineProvider="none"
         android:foreground="@android:color/transparent"
@@ -25,6 +25,7 @@
             android:layout_width="match_parent"
             android:background="@android:color/transparent"
             android:layout_height="?attr/actionBarSize"
+            app:layout_scrollFlags="scroll|enterAlways"
             app:popupTheme="@style/Theme.Educa.PopupOverlay">
         </androidx.appcompat.widget.Toolbar>
 

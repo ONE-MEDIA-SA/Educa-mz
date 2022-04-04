@@ -9,9 +9,6 @@
 
 
     <androidx.core.widget.NestedScrollView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -21,29 +18,48 @@
             android:layout_height="match_parent">
 
             <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/iv_exhibitor_cover"
                 android:layout_width="match_parent"
-                android:layout_height="130dp"
+                android:layout_height="170dp"
                 android:src="@drawable/confer"
                 android:scaleType="centerCrop"/>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
-                android:backgroundTint="@android:color/white"
-                android:background="@drawable/bg_border"
-                android:layout_marginTop="-50dp">
-                <com.makeramen.roundedimageview.RoundedImageView
-                    android:id="@+id/rounded"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:scaleType="centerCrop"
-                    app:riv_corner_radius="40dp"
-                    android:layout_margin="3dp"
-                    android:src="@drawable/person3"/>
-            </LinearLayout>
+                android:layout_marginTop="-40dp"
+                >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#FFFFFF"
+                    android:background="@drawable/bg_border">
+                    <com.makeramen.roundedimageview.RoundedImageView
+                        android:id="@+id/iv_exhibitor_logo"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:scaleType="centerCrop"
+                        app:riv_corner_radius="40dp"
+                        android:layout_margin="5dp"
+                        android:src="@drawable/person3"/>
+                </LinearLayout>
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btn_play"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginEnd="10dp"
+                    android:backgroundTint="@color/white"
+                    app:borderWidth="0dp"
+                    app:srcCompat="@drawable/ic_play_icon"
+                    app:tint="@color/black" />
+
+            </RelativeLayout>
 
             <TextView
+                android:id="@+id/tv_exhibitor_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="The title will be here"
@@ -52,6 +68,7 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
 
             <TextView
+                android:id="@+id/tv_exhibitor_category"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"

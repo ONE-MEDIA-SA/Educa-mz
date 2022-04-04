@@ -39,9 +39,9 @@ class OnboardingActivity : AppCompatActivity() {
                 }
 
                 if (position == 0) {
-                    btnBack.visibility = View.GONE
+                    btnBack.text = "Pular"
                 } else {
-                    btnBack.visibility = View.VISIBLE
+                    btnBack.text = "Voltar"
                 }
 
                 println("CHECKING $position")

@@ -25,8 +25,8 @@
             android:icon="@drawable/ic_favorite_border"
             android:title="@string/menu_favorite" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_gallery" />
+            android:id="@+id/nav_webinar"
+            android:icon="@drawable/ic_baseline_video_library_24"
+            android:title="@string/menu_webinar" />
     </group>
 </menu>

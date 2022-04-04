@@ -1,3 +1,9 @@
 package com.app.educa.model
 
-data class Exhibitor(var name: String, var category: String, var profile: String)
+import java.io.Serializable
+
+data class Exhibitor(
+    var id: Int,
+    var name: String,
+    var category: String,
+    var profile: String) : Serializable

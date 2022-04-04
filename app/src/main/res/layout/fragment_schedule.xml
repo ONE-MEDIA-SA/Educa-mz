@@ -17,8 +17,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginBottom="10dp"
-            android:text="Agenda do evento"
-            android:layout_marginTop="100dp"
+            android:text=""
+            android:layout_marginTop="70dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Subhead"/>
 
         <androidx.recyclerview.widget.RecyclerView

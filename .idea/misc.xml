@@ -36,7 +36,9 @@
         <entry key="app/src/main/res/drawable/onboarding_unselected_dot_white.xml" value="0.185" />
         <entry key="app/src/main/res/drawable/onboarding_viewpager_selector_blue.xml" value="0.1645" />
         <entry key="app/src/main/res/drawable/onboarding_viewpager_selector_orange.xml" value="0.185" />
+        <entry key="app/src/main/res/drawable/time_small.xml" value="0.184" />
         <entry key="app/src/main/res/layout-w936dp/activity_onboarding_example4.xml" value="0.137109375" />
+        <entry key="app/src/main/res/layout/activity_confer.xml" value="0.11576576576576576" />
         <entry key="app/src/main/res/layout/activity_exhibitor_content.xml" value="0.1572072072072072" />
         <entry key="app/src/main/res/layout/activity_exhibitor_page.xml" value="0.17117117117117117" />
         <entry key="app/src/main/res/layout/activity_favorite.xml" value="0.12252252252252252" />
@@ -46,7 +48,7 @@
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.1628901239846088" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1984375" />
         <entry key="app/src/main/res/layout/activity_onboarding_example4.xml" value="0.1581081081081081" />
-        <entry key="app/src/main/res/layout/activity_product_details.xml" value="0.1490990990990991" />
+        <entry key="app/src/main/res/layout/activity_product_details.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_profile.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.1581081081081081" />
         <entry key="app/src/main/res/layout/activity_search.xml" value="0.25" />
@@ -83,6 +85,7 @@
         <entry key="app/src/main/res/layout/item_study.xml" value="0.19739583333333333" />
         <entry key="app/src/main/res/layout/item_user_profile.xml" value="0.1572072072072072" />
         <entry key="app/src/main/res/layout/item_video.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/item_webinar.xml" value="0.25" />
         <entry key="app/src/main/res/layout/nav_header_main.xml" value="0.1828125" />
         <entry key="app/src/main/res/menu/activity_main_drawer.xml" value="0.1828125" />
         <entry key="app/src/main/res/menu/main.xml" value="0.15" />

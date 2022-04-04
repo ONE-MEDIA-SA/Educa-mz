@@ -9,7 +9,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.app.educa.R
-import com.app.educa.databinding.FragmentConferBinding
 import com.app.educa.databinding.FragmentExhibitorGalleryBinding
 import com.app.educa.ui.adapter.GalleryAdapter
 import com.app.educa.ui.viewmodel.ConferViewModel
