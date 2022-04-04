@@ -11,19 +11,28 @@ import android.view.WindowManager
 import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
+import com.app.educa.MainActivity
 import com.app.educa.R
 import com.app.educa.databinding.ActivityGameBinding
 import com.app.educa.model.Question
+import com.app.educa.ui.viewmodel.GameViewModel
 import com.app.educa.utils.Constants
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
-class GameActivity : AppCompatActivity(), View.OnClickListener {
+class GameActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityGameBinding
 
     private var mCurrentPosition: Int = 1
     private var mQuestionList: ArrayList<Question>? = null
     private var mSelectedOptionPosition: Int = 0
+
+    val gameViewModel: GameViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,13 +45,22 @@ class GameActivity : AppCompatActivity(), View.OnClickListener {
         mQuestionList = Constants.getQuestions()
         setQuestion()
 
-        binding.tvOption1.setOnClickListener { this }
-        binding.tvOption2.setOnClickListener { this }
-        binding.tvOption3.setOnClickListener { this }
-        binding.tvOption4.setOnClickListener { this }
+        binding.tvOption1.setOnClickListener { onClick(it) }
+        binding.tvOption2.setOnClickListener { onClick(it) }
+        binding.tvOption3.setOnClickListener { onClick(it) }
+        binding.tvOption4.setOnClickListener { onClick(it) }
 
-        binding.pbScore.setOnClickListener{
-            Toast.makeText(this, "Score", Toast.LENGTH_SHORT).show()
+        gameViewModel.score.value = mQuestionList!!.size
+        gameViewModel.score.observe(this, androidx.lifecycle.Observer {
+            binding.tvTotalQuestion.text = it.toString()
+        })
+
+        gameViewModel.correctAnswers.observe(this, androidx.lifecycle.Observer {
+            binding.tvWinCount.text = it.toString()
+        })
+
+        gameViewModel.wrongAnswers.observe(this) {
+            binding.tvLostCount.text = it.toString()
         }
 
     }
@@ -59,7 +77,7 @@ class GameActivity : AppCompatActivity(), View.OnClickListener {
            //TODO btn_submit.text = "Submit"
         }
 
-        binding.pbScore.progress = mCurrentPosition / binding.pbScore.max
+        binding.pbScore.progress = (mQuestionList!!.size -1) * mCurrentPosition
 
         binding.tvQuestion.text = question.question
         binding.tvOption1.text = question.optionOne
@@ -87,9 +105,7 @@ class GameActivity : AppCompatActivity(), View.OnClickListener {
 
     }
 
-    override fun onClick(v: View?) {
-        println("hiii")
-        Toast.makeText(this, "Clicked", Toast.LENGTH_SHORT).show()
+    fun onClick(v: View?) {
         when (v?.id) {
             R.id.tv_option_1 -> {
                 selectedOptionView(binding.tvOption1, 1)
@@ -122,19 +138,30 @@ class GameActivity : AppCompatActivity(), View.OnClickListener {
                             this,
                             "You have successfully completed the Quiz", Toast.LENGTH_SHORT
                         ).show()
-                        val intent = Intent(this,GameActivity::class.java)
+                        val intent = Intent(this, MainActivity::class.java)
                         startActivity(intent)
+                        finish()
                     }
                 }
             } else {
                 val question = mQuestionList?.get(mCurrentPosition - 1)
                 if (question!!.correctOption != mSelectedOptionPosition) {
                     answerView(mSelectedOptionPosition, R.drawable.bg_question_error)
+                    gameViewModel.incrementWrongAnswers()
+                } else {
+                    gameViewModel.incrementCorrectAnswers()
                 }
+
                 answerView(question.correctOption, R.drawable.bg_outline)
                 if (mCurrentPosition == mQuestionList!!.size) {
                     //TODO btn_submit.text = "Finish"
                 } else {
+                    GlobalScope.launch(Dispatchers.Main) {
+                        delay(3_000)
+                        mCurrentPosition++
+
+                        setQuestion()
+                    }
                     //TODO btn_submit.text = "Go to next question"
                 }
                 mSelectedOptionPosition = 0

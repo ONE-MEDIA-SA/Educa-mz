@@ -58,6 +58,7 @@ class ExhibitorAdapter : ListAdapter<Exhibitor, ExhibitorAdapter.ExhibitorViewHo
 
         holder.binding.root.setOnClickListener{
             val intent = Intent(holder.binding.root.context, ExhibitorPageActivity::class.java)
+            intent.putExtra("exhibitor", currentList[position])
             holder.binding.root.context.startActivity(intent)
         }
     }

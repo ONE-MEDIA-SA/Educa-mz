@@ -3,9 +3,11 @@ package com.app.educa.ui.fragment
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.app.educa.R
 import com.app.educa.databinding.FragmentListBinding
+import com.app.educa.model.Exhibitor
 import com.app.educa.ui.adapter.ProductAdapter
 import com.app.educa.ui.viewmodel.ProductViewModel
 
@@ -15,6 +17,7 @@ import com.app.educa.ui.viewmodel.ProductViewModel
  * create an instance of this fragment.
  */
 class ProductFragment : Fragment(R.layout.fragment_list) {
+
     private var _binding: FragmentListBinding? = null
     private val binding get() = _binding!!
 
@@ -22,6 +25,11 @@ class ProductFragment : Fragment(R.layout.fragment_list) {
         _binding = FragmentListBinding.bind(view)
         val productViewModel = ViewModelProvider(this).get(ProductViewModel::class.java)
         val adapter = ProductAdapter()
+        //val extra = requireActivity().intent.getStringExtra("exhibitor")
+        val exhibitor = requireActivity().intent.getSerializableExtra("exhibitor") as? Exhibitor
+        if (exhibitor != null) {
+        } else {
+        }
 
         productViewModel.products.observe(viewLifecycleOwner) {
 

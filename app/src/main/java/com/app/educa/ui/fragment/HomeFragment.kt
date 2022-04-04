@@ -14,10 +14,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.app.educa.R
 import com.app.educa.databinding.FragmentHomeBinding
-import com.app.educa.ui.activity.MapsActivity
-import com.app.educa.ui.activity.SearchActivity
-import com.app.educa.ui.activity.StudyViewActivity
-import com.app.educa.ui.activity.YoutubePlayerActivity
+import com.app.educa.ui.activity.*
 import com.app.educa.ui.viewmodel.HomeViewModel
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -34,6 +31,7 @@ class HomeFragment : Fragment() {
     val position = LatLng(-25.9550404,32.6089601)
     private var _binding: FragmentHomeBinding? = null
     private lateinit var btnPlay: FloatingActionButton
+    private lateinit var btnConfer: FloatingActionButton
     private lateinit var llSearchButton: LinearLayout
     private lateinit var chips: ChipGroup
     private lateinit var mapView: MapView
@@ -63,6 +61,8 @@ class HomeFragment : Fragment() {
             }
         }
 
+
+        btnConfer.setOnClickListener { startActivity(Intent(context, ConferActivity::class.java)) }
         btnPlay.setOnClickListener { startActivity(Intent(activity, YoutubePlayerActivity::class.java)) }
         llSearchButton.setOnClickListener { startActivity(Intent(activity, SearchActivity::class.java)) }
         chips.setOnCheckedChangeListener { group, checkedId ->
@@ -105,6 +105,7 @@ class HomeFragment : Fragment() {
         chips = root.findViewById(R.id.group)
         btnPlay  = root.findViewById(R.id.btn_play)
         llSearchButton = root.findViewById(R.id.ll_search_button)
+        btnConfer = root.findViewById(R.id.btn_confer)
     }
 
     override fun onDestroyView() {

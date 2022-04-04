@@ -10,7 +10,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.app.educa.databinding.ItemProductHBinding
 import com.app.educa.model.Product
 import com.app.educa.ui.activity.ProductDetailsActivity
+import com.app.educa.utils.Constants
 import com.bumptech.glide.Glide
+import kotlin.random.Random
 
 class ProductAdapter : ListAdapter<Product, ProductAdapter.ProductViewHolder>(Companion) {
 
@@ -35,9 +37,12 @@ class ProductAdapter : ListAdapter<Product, ProductAdapter.ProductViewHolder>(Co
     }
 
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
+        var productImg = if ( currentList[position].image.isEmpty() )
+            Constants.IMG_EMPTY
+        else currentList[position].image[(0 until currentList[position].image.size).random()]
         Glide
             .with(holder.binding.root)
-            .load(currentList[position].image)
+            .load(productImg)
             .into(holder.binding.imageProduct)
 
         holder.binding.tvProductName.text = currentList[position].name

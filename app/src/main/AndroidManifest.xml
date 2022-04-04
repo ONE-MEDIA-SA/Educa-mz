@@ -16,6 +16,10 @@
             android:exported="false"
             android:label="@string/title_activity_product_details"
             android:theme="@style/Theme.Educa.NoActionBar" />
+
+        <activity android:name=".ui.activity.ConferActivity"
+            android:parentActivityName=".MainActivity"
+            android:exported="false"/>
         <activity
             android:name=".MainActivity"
             android:exported="false" />
@@ -25,7 +29,8 @@
             android:value="${GOOGLE_MAP_API_KEY}" />
 
         <activity
-            android:name=".ui.activity.GalleryActivity"
+            android:name=".ui.activity.WebinarActivity"
+            android:parentActivityName=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".ui.activity.OnboardingActivity"
