@@ -64,6 +64,10 @@ dependencies {
     implementation 'org.jsoup:jsoup:1.10.3'
     // Slide dot indicator
     implementation 'com.tbuonomo:dotsindicator:4.2'
+    // Moshi
+    implementation 'com.squareup.moshi:moshi-kotlin:1.9.3'
+    // Retrofit with Moshi Converter
+    implementation 'com.squareup.retrofit2:converter-moshi:2.9.0'
     // Test
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
