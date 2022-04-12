@@ -6,7 +6,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.app.educa.data.ExhibitorApi
 import com.app.educa.model.Exhibitor
 import kotlinx.coroutines.launch
 
@@ -21,10 +20,10 @@ class ExhibitorViewModel : ViewModel() {
 
     private fun getExhibitors() {
         viewModelScope.launch {
-
             try {
                 var repository = MainRepository()
-                repository.getAllExhibitors(object : MainRepository.ResponseListener {
+
+                repository.getExhibitors(object : MainRepository.ResponseListener {
                     override fun onSuccess(response: List<Exhibitor>) {
                         _exhibitors.postValue(response)
                     }

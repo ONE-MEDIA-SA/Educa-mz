@@ -28,12 +28,12 @@ class ProductViewModel: ViewModel() {
 
         var images = getImages()
 
-        list.add(Product(1, "Tênis Adidas Runfalcon 2.0 ", "Categoria ", 1700.00, images, "Sapatos"))
-        list.add(Product(1, "Tênis nike air force 1'07 le", "Categoria ", 900.00, images, "Sapatos"))
-        list.add(Product(1, "Tênis Adidas Runfalcon 2.0 Masculino", "Categoria ", 1700.00, images, "Category"))
-        list.add(Product(1, "Tênis adidas zx 5k boost ", "Categoria ", 1700.00, images, "Sapatos"))
-        list.add(Product(1, "Tênis Adidas Runfalcon 2.0 Masculino", "Categoria ", 1700.00, images, "Category"))
-        list.add(Product(1, "Tênis Adidas Runfalcon 2.0 Masculino", "Categoria ", 1700.00, images, "Category"))
+//        list.add(Product(1, "Tênis Adidas Runfalcon 2.0 ", "Categoria ", 1700.00, images, "Sapatos"))
+//        list.add(Product(1, "Tênis nike air force 1'07 le", "Categoria ", 900.00, images, "Sapatos"))
+//        list.add(Product(1, "Tênis Adidas Runfalcon 2.0 Masculino", "Categoria ", 1700.00, images, "Category"))
+//        list.add(Product(1, "Tênis adidas zx 5k boost ", "Categoria ", 1700.00, images, "Sapatos"))
+//        list.add(Product(1, "Tênis Adidas Runfalcon 2.0 Masculino", "Categoria ", 1700.00, images, "Category"))
+//        list.add(Product(1, "Tênis Adidas Runfalcon 2.0 Masculino", "Categoria ", 1700.00, images, "Category"))
 
         return list
     }

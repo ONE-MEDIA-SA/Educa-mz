@@ -1,5 +1,6 @@
 package com.app.educa.model
 
+import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
 data class Exhibitor(
@@ -7,9 +8,12 @@ data class Exhibitor(
     var name: String = "",
     var email: String = "",
     var description: String = "",
-    var contact: String = "",
+    var contact: Array<String>,
+    @SerializedName("avatar")
     var profile: String = "",
+    @SerializedName("profile_background")
     var cover: String = "",
+    @SerializedName("apresentation_video")
     var video: String = "",
     var website: String = "",
     var likes: List<String> = arrayListOf(),
@@ -20,8 +24,9 @@ data class Exhibitor(
 ) : Serializable
 
 data class Location(
-    var long: Long = 0,
-    var lat: Long = 0,
+    var long: String = "",
+    var lat: String = "",
     var address: String = "Maputo"
 ) : Serializable
+
 

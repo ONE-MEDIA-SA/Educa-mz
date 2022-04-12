@@ -1,5 +1,6 @@
 package a2ibi.challenge.app.api
 
+import com.app.educa.model.CombinedResult
 import com.google.gson.JsonArray
 import com.google.gson.JsonObject
 import retrofit2.Call
@@ -13,6 +14,9 @@ interface Endpoint {
 
     @GET("/exhibitors/{id}/products")
     fun getProducts(): Call<JsonArray>
+
+    @GET("/exhibitors")
+    fun getExhib(): Call<CombinedResult>
 
 
 }
