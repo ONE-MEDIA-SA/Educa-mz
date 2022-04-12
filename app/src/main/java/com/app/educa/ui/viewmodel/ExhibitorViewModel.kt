@@ -24,8 +24,8 @@ class ExhibitorViewModel : ViewModel() {
                 var repository = MainRepository()
 
                 repository.getExhibitors(object : MainRepository.ResponseListener {
-                    override fun onSuccess(response: List<Exhibitor>) {
-                        _exhibitors.postValue(response)
+                    override fun onSuccess(response: List<Any>) {
+                        _exhibitors.postValue(response as List<Exhibitor>?)
                     }
 
                     override fun onFailure(message: String?) {

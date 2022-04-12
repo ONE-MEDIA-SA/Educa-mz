@@ -47,7 +47,6 @@ class ConferActivity : AppCompatActivity() {
                 this.adapter = adapter
                 layoutManager = LinearLayoutManager(context)
             }
-            Toast.makeText(this, it.toString(), Toast.LENGTH_SHORT).show()
         }
 
     }

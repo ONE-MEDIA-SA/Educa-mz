@@ -8,7 +8,7 @@ data class Product(
    val gender: String,
    val description: String,
    val category: String,
-   val images: List<String> ){
+   val images: List<String> = arrayListOf() ){
     fun getFormattedPrice(): String {
         return "${price.toInt()} MZN"
     }

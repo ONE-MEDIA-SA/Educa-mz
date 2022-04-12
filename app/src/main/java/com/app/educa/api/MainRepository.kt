@@ -37,7 +37,7 @@ class MainRepository {
 
     }
 
-    fun getProducts(listener: ResponseListener, id: String) {
+    fun getProducts( id: String, listener: ResponseListener) {
         endpoint.getProducts(id).enqueue(object : Callback<List<Product>> {
             override fun onResponse(call: Call<List<Product>>, response: Response<List<Product>>) {
                 response.body()?.let { listener.onSuccess(it) }

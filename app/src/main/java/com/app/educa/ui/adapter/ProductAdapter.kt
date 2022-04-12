@@ -37,13 +37,15 @@ class ProductAdapter : ListAdapter<Product, ProductAdapter.ProductViewHolder>(Co
     }
 
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
-//        var productImg = if ( currentList[position].image.isEmpty() )
-//            Constants.IMG_EMPTY
-//        else currentList[position].image[(0 until currentList[position].image.size).random()]
-//        Glide
-//            .with(holder.binding.root)
-//            .load(productImg)
-//            .into(holder.binding.imageProduct)
+
+
+        var productImg = if ( currentList[position].images == null )
+            Constants.IMG_EMPTY
+        else currentList[position].images[(0 until currentList[position].images.size).random()]
+        Glide
+            .with(holder.binding.root)
+            .load(productImg)
+            .into(holder.binding.imageProduct)
 
         holder.binding.tvProductName.text = currentList[position].name
         holder.binding.tvProductPrice.text = currentList[position].getFormattedPrice()

@@ -1,6 +1,7 @@
 package com.app.educa.ui.activity
 
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.lifecycle.ViewModelProvider
@@ -19,6 +20,8 @@ class WebinarActivity  : AppCompatActivity() {
     private lateinit var toolbar: Toolbar
 
     lateinit var binding: ActivityGalleryBinding
+
+    private val viewModel: ProductViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

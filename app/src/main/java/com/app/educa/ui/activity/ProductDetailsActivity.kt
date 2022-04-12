@@ -19,15 +19,15 @@ class ProductDetailsActivity : AppCompatActivity() {
         val productViewModel = ViewModelProvider(this).get(ProductViewModel::class.java)
         val adap = ProductAdapter()
 
-        productViewModel.products.observe(this) {
+        productViewModel.getProduct("").observe(this) {
             adap.submitList(it)
             binding.rvProduct.adapter = adap
         }
 
-        productViewModel.images.observe(this) {
-            binding.pager.adapter = AdapterSlider(it,this)
-            binding.dotsIndicator.setViewPager(binding.pager)
-        }
+        //todo update
+//
+//        binding.pager.adapter = AdapterSlider(it.,this)
+//        binding.dotsIndicator.setViewPager(binding.pager)
 
     }
 }
