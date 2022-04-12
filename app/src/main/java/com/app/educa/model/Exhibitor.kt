@@ -7,7 +7,6 @@ data class Exhibitor(
     var name: String = "",
     var email: String = "",
     var description: String = "",
-    var category: String = "",
     var contact: String = "",
     var profile: String = "",
     var cover: String = "",
@@ -24,5 +23,5 @@ data class Location(
     var long: Long = 0,
     var lat: Long = 0,
     var address: String = "Maputo"
-)
+) : Serializable
 

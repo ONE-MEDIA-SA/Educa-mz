@@ -35,7 +35,6 @@ class ExhibitorViewModel : ViewModel() {
 
                 })
             } catch (e: Exception) {
-                println("ERROR: $e")
                 _exhibitors.value = listOf()
             }
         }

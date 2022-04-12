@@ -33,12 +33,7 @@ class ConferActivity : AppCompatActivity() {
             ViewModelProvider(this).get(ConferViewModel::class.java)
 
         conferViewModel.exhibitor.observe(this) {
-            val adapter = ExhibitorAdapter()
-            adapter.submitList(it)
-            binding.rvExhibitor.apply {
-                this.adapter = adapter
-                layoutManager = LinearLayoutManager(context)
-            }
+
         }
 
 
@@ -46,11 +41,14 @@ class ConferActivity : AppCompatActivity() {
             ViewModelProvider(this).get(ExhibitorViewModel::class.java)
 
         exhibitorViewModel.exhibitor.observe(this) {
+            val adapter = ExhibitorAdapter()
+            adapter.submitList(it)
+            binding.rvExhibitor.apply {
+                this.adapter = adapter
+                layoutManager = LinearLayoutManager(context)
+            }
             Toast.makeText(this, it.toString(), Toast.LENGTH_SHORT).show()
         }
 
-        exhibitorViewModel.status.observe(this) {
-            Toast.makeText(this, "status"+it.toString(), Toast.LENGTH_SHORT).show()
-        }
     }
 }

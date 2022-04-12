@@ -51,7 +51,7 @@ class ExhibitorPageActivity : AppCompatActivity(),ItemClickListener {
 
     private fun updateUi(exhibitor: Exhibitor) {
         binding.tvExhibitorName.text = exhibitor.name
-        binding.tvExhibitorCategory.text = exhibitor.category
+        binding.tvExhibitorCategory.text = exhibitor.sector
         Glide
             .with(this)
             .load(exhibitor.profile)
