@@ -52,8 +52,9 @@ class MainRepository {
                     var isActive: Boolean = it.asJsonObject.get("isActive").asBoolean
 
                     var location = Location()
-                    println("Location: $long " )
-
+                    try {
+                        location = Location(long.toLong(), lat.toLong(), address)
+                    } catch (e: Exception) { }
 
                     var exhibitor = Exhibitor(id, name, email, description,
                         contact, profile, cover, video, website,

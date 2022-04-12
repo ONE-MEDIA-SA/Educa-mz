@@ -10,4 +10,9 @@ import retrofit2.http.Path
 interface Endpoint {
     @GET("/exhibitors")
     fun getExhibitors(): Call<JsonObject>
+
+    @GET("/exhibitors/{id}/products")
+    fun getProducts(): Call<JsonArray>
+
+
 }
