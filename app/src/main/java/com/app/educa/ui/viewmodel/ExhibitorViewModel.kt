@@ -1,5 +1,6 @@
 package com.app.educa.ui.viewmodel
 
+import a2ibi.challenge.app.api.MainRepository
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -10,15 +11,8 @@ import com.app.educa.model.Exhibitor
 import kotlinx.coroutines.launch
 
 
-enum class ExhibitorApiStatus { LOADING, ERROR, DONE }
-
 class ExhibitorViewModel : ViewModel() {
-    private val _status = MutableLiveData<ExhibitorApiStatus>()
-
-    val status: LiveData<ExhibitorApiStatus> = _status
-
     private val _exhibitors = MutableLiveData<List<Exhibitor>>()
-
     val exhibitor: LiveData<List<Exhibitor>> = _exhibitors
 
     init {
@@ -27,13 +21,21 @@ class ExhibitorViewModel : ViewModel() {
 
     private fun getExhibitors() {
         viewModelScope.launch {
-            _status.value = ExhibitorApiStatus.LOADING
+
             try {
-                _exhibitors.value = ExhibitorApi.retrofitService.getExhibitors()
-                _status.value = ExhibitorApiStatus.DONE
+                var repository = MainRepository()
+                repository.getAllExhibitors(object : MainRepository.ResponseListener {
+                    override fun onSuccess(response: List<Exhibitor>) {
+                        _exhibitors.postValue(response)
+                    }
+
+                    override fun onFailure(message: String?) {
+                        _exhibitors.postValue(arrayListOf())
+                    }
+
+                })
             } catch (e: Exception) {
                 println("ERROR: $e")
-                _status.value = ExhibitorApiStatus.ERROR
                 _exhibitors.value = listOf()
             }
         }
