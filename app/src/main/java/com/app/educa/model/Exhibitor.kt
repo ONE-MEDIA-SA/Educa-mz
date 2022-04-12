@@ -3,7 +3,7 @@ package com.app.educa.model
 import java.io.Serializable
 
 data class Exhibitor(
-    var id: Int,
+    var id: String,
     var name: String = "",
     var email: String = "",
     var description: String = "",

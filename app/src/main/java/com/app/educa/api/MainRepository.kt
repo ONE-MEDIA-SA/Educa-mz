@@ -2,6 +2,7 @@ package a2ibi.challenge.app.api
 
 import a2ibi.challenge.app.api.MainRepository.ResponseListener
 import com.app.educa.model.Exhibitor
+import com.app.educa.model.Location
 
 import com.app.educa.utils.Constants
 import com.app.educa.utils.NetworkUtils
@@ -28,15 +29,31 @@ class MainRepository {
             override fun onResponse(call: Call<JsonArray>, response: Response<JsonArray>) {
 
                 var data = mutableListOf<Exhibitor>()
-                var position = 0;
-                for (item in response.body()!!) {
-                    var name = item.asJsonObject.get("name").asJsonObject.get("common").toString().replace("\"", "");
+                for ((position, item) in response.body()!!.withIndex()) {
+                    var current = item.asJsonObject.get("data")
+                    var id = current.asJsonObject.get("id").toString()
+                    var name = current.asJsonObject.get("name").toString()
+                    var email = current.asJsonObject.get("email").toString()
+                    var description = current.asJsonObject.get("description").toString()
+                    var category = current.asJsonObject.get("category").toString()
+                    var contact = current.asJsonObject.get("contact").toString()
+                    var profile = current.asJsonObject.get("profile").toString()
+                    var cover = current.asJsonObject.get("cover").toString()
+                    var video = current.asJsonObject.get("video").toString()
+                    var website = current.asJsonObject.get("website").toString()
+                    //var likes: ArrayList<String>? = current.asJsonObject.get("likes").asJsonArray
+                    var sector = current.asJsonObject.get("sector").toString()
+                    var long = current.asJsonObject.get("location").asJsonObject.get("long").toString()
+                    var address = current.asJsonObject.get("location").asJsonObject.get("address").toString()
+                    var lat = current.asJsonObject.get("location").asJsonObject.get("lat").toString()
+                    var isActive: Boolean = current.asJsonObject.get("isActive").asBoolean
 
-                    var exhibitor = Exhibitor()
-                    data.add(country)
-                    position++
-
-
+                    var location = Location(long.toLong(), lat.toLong(), address)
+                    var exhibitor = Exhibitor(id, name, email, description, category,
+                        contact, profile, cover, video, website,
+                        arrayListOf(), sector, location, isActive
+                    )
+                     data.add(exhibitor)
                 }
 
                 listener.onSuccess(data)
