@@ -1,10 +1,7 @@
 package a2ibi.challenge.app.api
 
 import a2ibi.challenge.app.api.MainRepository.ResponseListener
-import com.app.educa.model.CombinedResult
-import com.app.educa.model.Exhibitor
-import com.app.educa.model.Location
-import com.app.educa.model.Product
+import com.app.educa.model.*
 
 import com.app.educa.utils.Constants
 import com.app.educa.utils.NetworkUtils
@@ -45,6 +42,19 @@ class MainRepository {
 
             override fun onFailure(call: Call<List<Product>>, t: Throwable) {
                listener.onFailure(t.toString())
+            }
+
+        })
+    }
+
+    fun getGallery(id : String, listener: ResponseListener) {
+        endpoint.getGallery(id).enqueue(object : Callback<List<Gallery>> {
+            override fun onResponse(call: Call<List<Gallery>>, response: Response<List<Gallery>>) {
+                TODO("Not yet implemented")
+            }
+
+            override fun onFailure(call: Call<List<Gallery>>, t: Throwable) {
+                TODO("Not yet implemented")
             }
 
         })
