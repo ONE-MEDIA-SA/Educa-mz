@@ -41,7 +41,7 @@
                         android:scaleType="centerCrop"
                         app:riv_corner_radius="40dp"
                         android:layout_margin="5dp"
-                        android:src="@drawable/person3"/>
+                        android:src="@drawable/logo"/>
                 </LinearLayout>
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
