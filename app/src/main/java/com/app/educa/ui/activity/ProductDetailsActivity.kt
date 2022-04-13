@@ -6,10 +6,12 @@ import androidx.lifecycle.ViewModelProvider
 import com.app.educa.R
 import com.app.educa.databinding.ActivityProductDetailsBinding
 import com.app.educa.model.Exhibitor
+import com.app.educa.model.Gallery
 import com.app.educa.model.Product
 import com.app.educa.ui.adapter.AdapterSlider
 import com.app.educa.ui.adapter.ProductAdapter
 import com.app.educa.ui.viewmodel.ProductViewModel
+import com.app.educa.utils.Constants
 
 class ProductDetailsActivity : AppCompatActivity() {
     lateinit var binding: ActivityProductDetailsBinding
@@ -28,7 +30,9 @@ class ProductDetailsActivity : AppCompatActivity() {
             binding.rvProduct.adapter = adap
         }
 
-        binding.pager.adapter = AdapterSlider(product.images,this)
+        var listOfImages = if(product!!.images != null) product!!.images else listOf(
+            Constants.IMG_EMPTY, Constants.IMG_EMPTY)
+        binding.pager.adapter = AdapterSlider(listOfImages,this)
         binding.dotsIndicator.setViewPager(binding.pager)
 
         updateUI(product)
