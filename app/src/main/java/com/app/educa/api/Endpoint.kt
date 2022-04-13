@@ -3,6 +3,7 @@ package a2ibi.challenge.app.api
 import com.app.educa.model.CombinedResult
 import com.app.educa.model.Gallery
 import com.app.educa.model.Product
+import com.app.educa.model.Webinar
 import com.google.gson.JsonArray
 import com.google.gson.JsonObject
 import retrofit2.Call
@@ -20,5 +21,8 @@ interface Endpoint {
 
     @GET("/exhibitors")
     fun getExhibitors(): Call<CombinedResult>
+
+    @GET("/webnars")
+    fun getWebinars(): Call<List<Webinar>>
 
 }

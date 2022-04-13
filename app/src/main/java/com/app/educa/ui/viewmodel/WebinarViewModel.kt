@@ -1,19 +1,37 @@
 package com.app.educa.ui.viewmodel
 
+import a2ibi.challenge.app.api.MainRepository
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.app.educa.model.Webinar
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 
 class WebinarViewModel : ViewModel() {
-    private val _webinar = MutableLiveData<List<String>>().apply {
-        value = arrayListOf(
-            "https://media.istockphoto.com/photos/businessman-picture-id1251246829?k=20&m=1251246829&s=612x612&w=0&h=10TjD684NJ9_ApsOopdhg5O1AFyjcC7D7epAtxKVR6U=",
-            "https://media.istockphoto.com/photos/education-picture-id1166847872?k=20&m=1166847872&s=612x612&w=0&h=leRrFrOIjznLzDT37dKRbW8kHsYkxYU5LaqjRxpCBxI=",
-            "https://media.istockphoto.com/photos/education-picture-id1166847872?k=20&m=1166847872&s=612x612&w=0&h=leRrFrOIjznLzDT37dKRbW8kHsYkxYU5LaqjRxpCBxI=",
-            "https://media.istockphoto.com/photos/education-picture-id1166847872?k=20&m=1166847872&s=612x612&w=0&h=leRrFrOIjznLzDT37dKRbW8kHsYkxYU5LaqjRxpCBxI="
-        )
+    private val _webinar = MutableLiveData<List<Webinar>>()
+
+    val webinar: LiveData<List<Webinar>> = _webinar
+    init {
+        getWebinar()
     }
 
-    val webinar: LiveData<List<String>> = _webinar
+    private fun getWebinar() {
+        viewModelScope.launch {
+            var mainRepository = MainRepository()
+
+            mainRepository.getExhibitors(object : MainRepository.ResponseListener {
+                override fun onSuccess(response: List<Any>) {
+                    _webinar.value = response as List<Webinar>
+                }
+
+                override fun onFailure(message: String?) {
+                   _webinar.value = arrayListOf()
+                }
+
+            })
+        }
+    }
 
 }
