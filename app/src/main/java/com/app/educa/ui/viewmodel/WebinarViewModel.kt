@@ -21,12 +21,15 @@ class WebinarViewModel : ViewModel() {
         viewModelScope.launch {
             var mainRepository = MainRepository()
 
-            mainRepository.getExhibitors(object : MainRepository.ResponseListener {
+            mainRepository.getWebinars(object : MainRepository.ResponseListener {
                 override fun onSuccess(response: List<Any>) {
+                    println("WEBINAR: $response")
                     _webinar.value = response as List<Webinar>
                 }
 
                 override fun onFailure(message: String?) {
+
+                    println("WEBINAR: $message")
                    _webinar.value = arrayListOf()
                 }
 

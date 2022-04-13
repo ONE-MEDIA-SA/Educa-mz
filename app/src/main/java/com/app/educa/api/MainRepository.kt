@@ -61,12 +61,12 @@ class MainRepository {
     }
 
     fun getWebinars(listener: ResponseListener) {
-        endpoint.getWebinars().enqueue(object : Callback<List<Webinar>> {
-            override fun onResponse(call: Call<List<Webinar>>, response: Response<List<Webinar>>) {
-                listener.onSuccess(response.body() as List<Webinar>)
+        endpoint.getWebinars().enqueue(object : Callback<CombinedWebinar> {
+            override fun onResponse(call: Call<CombinedWebinar>, response: Response<CombinedWebinar>) {
+                listener.onSuccess(response.body()!!.data)
             }
 
-            override fun onFailure(call: Call<List<Webinar>>, t: Throwable) {
+            override fun onFailure(call: Call<CombinedWebinar>, t: Throwable) {
                 listener.onFailure(t.toString())
             }
 

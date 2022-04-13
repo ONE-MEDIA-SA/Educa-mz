@@ -6,6 +6,7 @@ data class Webinar (
     var description: String,
     var date: String,
     val video_url: String,
+    var background: String,
     var time: Time
 )
 

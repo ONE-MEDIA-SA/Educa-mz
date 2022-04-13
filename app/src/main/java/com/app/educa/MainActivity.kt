@@ -22,18 +22,23 @@ import com.afollestad.materialdialogs.MaterialDialog
 import com.afollestad.materialdialogs.customview.customView
 import com.app.educa.databinding.ActivityMainBinding
 import com.app.educa.ui.activity.RegisterActivity
+import com.google.firebase.auth.FirebaseAuth
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
+    private lateinit var  auth: FirebaseAuth
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        auth= FirebaseAuth.getInstance()
+
 
         setSupportActionBar(binding.appBarMain.toolbar)
 
@@ -67,8 +72,10 @@ class MainActivity : AppCompatActivity() {
                 if (false) {
                     showProfileDialog()
                 } else {
-                    Intent(this, RegisterActivity::class.java).also {
-                        startActivity(it)
+                    if (auth.currentUser == null) {
+                        startActivity(Intent(this, RegisterActivity::class.java))
+                    } else {
+                        showProfileDialog()
                     }
                 }
                 true
