@@ -5,6 +5,8 @@ import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
 import com.app.educa.R
 import com.app.educa.databinding.ActivityProductDetailsBinding
+import com.app.educa.model.Exhibitor
+import com.app.educa.model.Product
 import com.app.educa.ui.adapter.AdapterSlider
 import com.app.educa.ui.adapter.ProductAdapter
 import com.app.educa.ui.viewmodel.ProductViewModel
@@ -16,18 +18,18 @@ class ProductDetailsActivity : AppCompatActivity() {
         binding = ActivityProductDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val product = intent.getSerializableExtra("product") as? Product
+
         val productViewModel = ViewModelProvider(this).get(ProductViewModel::class.java)
         val adap = ProductAdapter()
 
-        productViewModel.getProduct("").observe(this) {
+        productViewModel.getProduct(product!!.exhibitor_id).observe(this) {
             adap.submitList(it)
             binding.rvProduct.adapter = adap
         }
 
-        //todo update
-//
-//        binding.pager.adapter = AdapterSlider(it.,this)
-//        binding.dotsIndicator.setViewPager(binding.pager)
+        binding.pager.adapter = AdapterSlider(product.images,this)
+        binding.dotsIndicator.setViewPager(binding.pager)
 
     }
 }

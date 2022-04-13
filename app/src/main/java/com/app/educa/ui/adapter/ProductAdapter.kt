@@ -51,6 +51,7 @@ class ProductAdapter : ListAdapter<Product, ProductAdapter.ProductViewHolder>(Co
         holder.binding.tvProductPrice.text = currentList[position].getFormattedPrice()
         holder.binding.root.setOnClickListener {
             Intent(holder.binding.root.context, ProductDetailsActivity::class.java).apply {
+                this.putExtra("product", currentList[position])
                 holder.binding.root.context.startActivity(this)
             }
         }

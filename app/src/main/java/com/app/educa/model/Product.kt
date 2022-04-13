@@ -1,5 +1,7 @@
 package com.app.educa.model
 
+import java.io.Serializable
+
 data class Product(
    val id: String,
    val name: String,
@@ -8,7 +10,9 @@ data class Product(
    val gender: String,
    val description: String,
    val category: String,
-   val images: List<String> = arrayListOf() ){
+   var exhibitor_id: String,
+   val images: List<String> = arrayListOf()
+) : Serializable {
     fun getFormattedPrice(): String {
         return "${price.toInt()} MZN"
     }

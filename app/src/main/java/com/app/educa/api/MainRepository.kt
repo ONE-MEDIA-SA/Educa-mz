@@ -50,7 +50,7 @@ class MainRepository {
     fun getGallery(id : String, listener: ResponseListener) {
         endpoint.getGallery(id).enqueue(object : Callback<List<Gallery>> {
             override fun onResponse(call: Call<List<Gallery>>, response: Response<List<Gallery>>) {
-                listener.onSuccess(response as List<Gallery>)
+                listener.onSuccess(response.body() as List<Gallery>)
             }
 
             override fun onFailure(call: Call<List<Gallery>>, t: Throwable) {
