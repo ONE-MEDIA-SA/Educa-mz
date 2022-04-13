@@ -50,11 +50,11 @@ class MainRepository {
     fun getGallery(id : String, listener: ResponseListener) {
         endpoint.getGallery(id).enqueue(object : Callback<List<Gallery>> {
             override fun onResponse(call: Call<List<Gallery>>, response: Response<List<Gallery>>) {
-                TODO("Not yet implemented")
+                listener.onSuccess(response as List<Gallery>)
             }
 
             override fun onFailure(call: Call<List<Gallery>>, t: Throwable) {
-                TODO("Not yet implemented")
+                listener.onFailure(t.toString())
             }
 
         })

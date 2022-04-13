@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.app.educa.R
 import com.app.educa.databinding.FragmentExhibitorGalleryBinding
+import com.app.educa.model.Exhibitor
 import com.app.educa.ui.adapter.GalleryAdapter
 import com.app.educa.ui.viewmodel.ConferViewModel
 import com.app.educa.ui.viewmodel.GalleryViewModel
@@ -42,13 +43,16 @@ class ExhibitorGalleryFragment : Fragment(R.layout.fragment_exhibitor_gallery) {
             ViewModelProvider(this)[GalleryViewModel::class.java]
         val adapter = GalleryAdapter()
 
-        galleryViewModel.images.observe(viewLifecycleOwner) {
-            println("images: $it")
-            adapter.submitList(it)
-            binding.rvGallery.layoutManager =
-                StaggeredGridLayoutManager(3, LinearLayoutManager.VERTICAL)
-            binding.rvGallery.adapter = adapter
+        val exhibitor = requireActivity().intent.getSerializableExtra("exhibitor") as? Exhibitor
+        if (exhibitor != null) {
+            galleryViewModel.getGallery(exhibitor.id).observe(viewLifecycleOwner) {
+                adapter.submitList(it)
+                binding.rvGallery.layoutManager =
+                    StaggeredGridLayoutManager(3, LinearLayoutManager.VERTICAL)
+                binding.rvGallery.adapter = adapter
+            }
         }
+
 
         return root
     }
