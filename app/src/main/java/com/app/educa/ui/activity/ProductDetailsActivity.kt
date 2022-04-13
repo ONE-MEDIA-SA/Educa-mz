@@ -31,5 +31,14 @@ class ProductDetailsActivity : AppCompatActivity() {
         binding.pager.adapter = AdapterSlider(product.images,this)
         binding.dotsIndicator.setViewPager(binding.pager)
 
+        updateUI(product)
+
+    }
+
+    private fun updateUI(product: Product) {
+        binding.tvProductName.text = product.name
+        binding.tvProductQuantity.text = "Quantidade: ${product.quantity}"
+        binding.tvProductDescription.text = product.description
+        binding.tvProductPrice.text = product.getFormattedPrice()
     }
 }
