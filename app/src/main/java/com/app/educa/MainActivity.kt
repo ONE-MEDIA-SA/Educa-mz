@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.Window
+import android.widget.Button
 import android.widget.ImageView
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
@@ -91,7 +92,14 @@ class MainActivity : AppCompatActivity() {
         dialog.setContentView(R.layout.dialog_profile);
 
         var close = dialog.findViewById<ImageView>(R.id.img_close)
+        var logout = dialog.findViewById<Button>(R.id.btn_logout)
         close.setOnClickListener {
+            dialog.dismiss()
+        }
+
+        logout.setOnClickListener {
+            auth.signOut()
+            startActivity(Intent(this, MainActivity::class.java))
             dialog.dismiss()
         }
 
