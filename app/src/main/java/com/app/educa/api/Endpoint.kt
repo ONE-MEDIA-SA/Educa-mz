@@ -24,7 +24,7 @@ interface Endpoint {
     @GET("/webnars")
     fun getWebinars(): Call<CombinedWebinar>
 
-    @GET("/user/{id}")
+    @GET("/users/{id}")
     fun getUser(@Path("id") id: String): Call<User>
 
     @POST("/users/{id}")

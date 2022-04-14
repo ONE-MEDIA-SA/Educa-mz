@@ -78,7 +78,7 @@ class MainRepository {
     fun getUser(id: String, listener: ResponseListener) {
         endpoint.getUser(id).enqueue(object : Callback<User> {
             override fun onResponse(call: Call<User>, response: Response<User>) {
-                response.body()?.let { listener.onSuccess(listOf(response)) }
+                response.body()?.let { listener.onSuccess(listOf(response.body() as User)) }
             }
 
             override fun onFailure(call: Call<User>, t: Throwable) {

@@ -6,11 +6,9 @@ import android.os.Bundle
 import android.view.WindowManager
 import android.widget.Toast
 import androidx.activity.viewModels
-import androidx.fragment.app.viewModels
 import com.app.educa.MainActivity
 import com.app.educa.databinding.ActivityRegisterBinding
 import com.app.educa.model.User
-import com.app.educa.ui.viewmodel.ProductViewModel
 import com.app.educa.ui.viewmodel.RegisterViewModel
 import com.google.firebase.auth.FirebaseAuth
 

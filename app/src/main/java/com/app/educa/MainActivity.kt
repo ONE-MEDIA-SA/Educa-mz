@@ -10,6 +10,9 @@ import android.view.MenuItem
 import android.view.Window
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.TextView
+import android.widget.Toast
+import androidx.activity.viewModels
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
@@ -22,7 +25,10 @@ import androidx.appcompat.app.AppCompatActivity
 import com.afollestad.materialdialogs.MaterialDialog
 import com.afollestad.materialdialogs.customview.customView
 import com.app.educa.databinding.ActivityMainBinding
+import com.app.educa.model.User
 import com.app.educa.ui.activity.RegisterActivity
+import com.app.educa.ui.viewmodel.RegisterViewModel
+import com.app.educa.ui.viewmodel.UserViewModel
 import com.google.firebase.auth.FirebaseAuth
 import java.util.*
 
@@ -93,6 +99,20 @@ class MainActivity : AppCompatActivity() {
 
         var close = dialog.findViewById<ImageView>(R.id.img_close)
         var logout = dialog.findViewById<Button>(R.id.btn_logout)
+        var name = dialog.findViewById<TextView>(R.id.tv_name)
+        var email = dialog.findViewById<TextView>(R.id.tv_email)
+
+        val model: UserViewModel by viewModels()
+        Toast.makeText(this, auth.uid.toString(), Toast.LENGTH_SHORT).show()
+
+        model.getUser(auth.uid!!).observe(this, androidx.lifecycle.Observer {
+            Toast.makeText(this, it.toString(), Toast.LENGTH_LONG).show()
+            var user: User = it[0]
+            name.text = user.name
+            email.text = user.email
+        })
+
+
         close.setOnClickListener {
             dialog.dismiss()
         }
