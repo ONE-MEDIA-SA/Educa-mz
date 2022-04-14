@@ -24,12 +24,14 @@ class MainRepository {
 
     fun getExhibitors(listener: ResponseListener) {
         endpoint.getExhibitors().enqueue(object : Callback<CombinedResult> {
-            override fun onResponse(call: Call<CombinedResult>, response: Response<CombinedResult>) {
+            override fun onResponse(
+                call: Call<CombinedResult>, response: Response<CombinedResult>) {
                 listener.onSuccess(response.body()!!.data)
             }
             override fun onFailure(call: Call<CombinedResult>, t: Throwable) {
                 listener.onFailure(t.toString())
             }
+
         })
 
     }
@@ -71,6 +73,33 @@ class MainRepository {
             }
 
         })
+    }
+
+    fun getUser(id: String, listener: ResponseListener) {
+        endpoint.getUser(id).enqueue(object : Callback<User> {
+            override fun onResponse(call: Call<User>, response: Response<User>) {
+                response.body()?.let { listener.onSuccess(listOf(response)) }
+            }
+
+            override fun onFailure(call: Call<User>, t: Throwable) {
+                listener.onFailure(t.toString())
+            }
+
+        })
+    }
+
+    fun setUser(user: User, listener: ResponseListener) {
+        endpoint.updateUser(user.uid, user).enqueue(object : Callback<User> {
+            override fun onResponse(call: Call<User>, response: Response<User>) {
+                listener.onSuccess(listOf(user))
+            }
+
+            override fun onFailure(call: Call<User>, t: Throwable) {
+                listener.onFailure(t.toString())
+            }
+
+        })
+
     }
 
 

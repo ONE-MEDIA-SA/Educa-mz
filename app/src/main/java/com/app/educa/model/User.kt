@@ -6,5 +6,5 @@ data class User(
     val email: String,
     val contact: String,
     val avatar: String,
-    val favorite_exhibitors: String,
+    val favorite_exhibitors: List<String>,
 )
