@@ -63,6 +63,7 @@
                     android:layout_height="wrap_content">
 
                     <TextView
+                        android:id="@+id/tv_product_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Nike Air Max"
@@ -78,9 +79,10 @@
                     
 
                     <TextView
+                        android:id="@+id/tv_product_quantity"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Quantity: 1"
+                        android:text="Quantidate: 1"
                         />
                     
                 </LinearLayout>
@@ -105,6 +107,7 @@
             </LinearLayout>
 
             <TextView
+                android:id="@+id/tv_product_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -147,14 +150,16 @@
         tools:layout_editor_absoluteX="10dp">
 
         <TextView
+            android:id="@+id/tv_product_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:textStyle="bold"
             android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-            android:text="2500.00 MZN" />
+            android:text="00.00 MZN" />
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_product_buy"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingEnd="15dp"

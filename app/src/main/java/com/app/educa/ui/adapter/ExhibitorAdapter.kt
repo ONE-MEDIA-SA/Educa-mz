@@ -39,7 +39,7 @@ class ExhibitorAdapter : ListAdapter<Exhibitor, ExhibitorAdapter.ExhibitorViewHo
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onBindViewHolder(holder: ExhibitorViewHolder, position: Int) {
         holder.binding.tvExhibitorName.text = currentList[position].name
-        holder.binding.tvExhibitorCategory.text = currentList[position].category
+        holder.binding.tvExhibitorCategory.text = currentList[position].sector
 
 
         holder.binding.btnExhibitorFavorite.setOnClickListener {

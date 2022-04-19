@@ -4,33 +4,45 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".ui.fragment.AboutFragment">
-
-
-    <com.google.android.material.card.MaterialCardView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginBottom="15dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp">
-        <com.google.android.gms.maps.MapView
-            android:id="@+id/map"
-            android:apiKey="AIzaSyC4icV5VaJ2OE2RCaR8PuN1f-DycLwpqfw"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="180dp"/>
-
-    </com.google.android.material.card.MaterialCardView>
-    <TextView
-        android:id="@+id/about_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/about_text"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:padding="@dimen/activity_horizontal_margin" />
+            android:layout_height="wrap_content">
 
 
-    <include layout="@layout/item_location_about"/>
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp">
+                <com.google.android.gms.maps.MapView
+                    android:id="@+id/map"
+                    android:apiKey="AIzaSyC4icV5VaJ2OE2RCaR8PuN1f-DycLwpqfw"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"/>
+
+            </com.google.android.material.card.MaterialCardView>
+            <TextView
+                android:id="@+id/about_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/about_text"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:padding="@dimen/activity_horizontal_margin" />
+
+
+            <include layout="@layout/item_location_about"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+
 
 </LinearLayout>

@@ -41,7 +41,7 @@
                         android:scaleType="centerCrop"
                         app:riv_corner_radius="40dp"
                         android:layout_margin="5dp"
-                        android:src="@drawable/person3"/>
+                        android:src="@drawable/logo"/>
                 </LinearLayout>
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -50,7 +50,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerInParent="true"
-                    android:layout_marginEnd="10dp"
+                    android:layout_marginEnd="15dp"
                     android:backgroundTint="@color/white"
                     app:borderWidth="0dp"
                     app:srcCompat="@drawable/ic_play_icon"
@@ -85,8 +85,7 @@
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/viewPager"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1" />
+                android:layout_height="wrap_content" />
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

@@ -35,6 +35,7 @@ class ExhibitorPageActivity : AppCompatActivity(),ItemClickListener {
 
         binding.btnPlay.setOnClickListener {
             val intent = Intent(this, YoutubePlayerActivity::class.java)
+            intent.putExtra("url", exhibitor!!.video)
             startActivity(intent)
         }
         val viewPager = binding.viewPager
@@ -51,11 +52,24 @@ class ExhibitorPageActivity : AppCompatActivity(),ItemClickListener {
 
     private fun updateUi(exhibitor: Exhibitor) {
         binding.tvExhibitorName.text = exhibitor.name
-        binding.tvExhibitorCategory.text = exhibitor.category
-        Glide
-            .with(this)
-            .load(exhibitor.profile)
-            .into(binding.ivExhibitorLogo)
+        binding.tvExhibitorCategory.text = exhibitor.sector
+
+        if (exhibitor.profile.isNotEmpty()) {
+            Glide
+                .with(this)
+                .load(exhibitor.profile)
+                .into(binding.ivExhibitorLogo)
+        }
+
+        if (exhibitor.cover.isNotEmpty()) {
+            Glide
+                .with(this)
+                .load(exhibitor.cover)
+                .into(binding.ivExhibitorCover)
+        }
+
+
+
     }
 
     override fun onItemClick(item: String?) {

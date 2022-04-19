@@ -5,15 +5,20 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.app.educa.MainActivity
 import com.app.educa.databinding.ActivityLoginBinding
+import com.google.firebase.auth.FirebaseAuth
 
 class LoginActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityLoginBinding
+    private lateinit var  auth: FirebaseAuth
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        auth= FirebaseAuth.getInstance()
 
         binding.btnSignup.setOnClickListener {
            checkFields();
@@ -43,6 +48,19 @@ class LoginActivity : AppCompatActivity() {
         } else {
             binding.emailInputLayout.error = null
             binding.passwordInputLayout.error = null
+
+            auth.signInWithEmailAndPassword(email.toString(), password.toString())
+                .addOnCompleteListener(this) { task ->
+                    if (task.isSuccessful) {
+                        val intent = Intent(this, MainActivity::class.java)
+                        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                        startActivity(intent)
+                    } else {
+                        binding.emailInputLayout.error = null
+                        binding.passwordInputLayout.error = null
+                        binding.emailInputLayout.error = "Email or Password is incorrect"
+                    }
+                }
 
             val intent = Intent(this, MainActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK

@@ -37,9 +37,11 @@ class ProductAdapter : ListAdapter<Product, ProductAdapter.ProductViewHolder>(Co
     }
 
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
-        var productImg = if ( currentList[position].image.isEmpty() )
+
+
+        var productImg = if ( currentList[position].images == null )
             Constants.IMG_EMPTY
-        else currentList[position].image[(0 until currentList[position].image.size).random()]
+        else currentList[position].images[(0 until currentList[position].images.size).random()]
         Glide
             .with(holder.binding.root)
             .load(productImg)
@@ -49,6 +51,7 @@ class ProductAdapter : ListAdapter<Product, ProductAdapter.ProductViewHolder>(Co
         holder.binding.tvProductPrice.text = currentList[position].getFormattedPrice()
         holder.binding.root.setOnClickListener {
             Intent(holder.binding.root.context, ProductDetailsActivity::class.java).apply {
+                this.putExtra("product", currentList[position])
                 holder.binding.root.context.startActivity(this)
             }
         }

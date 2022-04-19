@@ -3,9 +3,9 @@ package com.app.educa.utils
 import com.app.educa.model.Question
 
 object Constants {
-    const val BASE_URL = "https://educa-api.herokuapp.com/"
+    const val BASE_URL = "https://api-educa-firebase.herokuapp.com/"
     const val IMG_EMPTY = "https://firebasestorage.googleapis.com/v0/b/fikani.appspot.com/o/perfil%2Funnamed.jpg?alt=media&token=234789f8-f514-4ef0-aee4-36f534f03507"
-
+    const val IMG_EMPTY_COVER = "https://media.istockphoto.com/photos/female-student-picture-id1264296727?b=1&k=20&m=1264296727&s=170667a&w=0&h=uGwjyDSjSqIsq9jCwnCHpQDtnDkNIU3Jjoq8cTN8Pss="
     fun getQuestions(): ArrayList<Question> {
         val questionsList = ArrayList<Question>()
 

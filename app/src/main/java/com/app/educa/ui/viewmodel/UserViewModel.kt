@@ -5,37 +5,38 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.app.educa.model.Gallery
+import com.app.educa.model.User
 import kotlinx.coroutines.launch
 
-class GalleryViewModel : ViewModel() {
-
+class UserViewModel: ViewModel() {
     lateinit var id: String
-    private val gallery: MutableLiveData<List<Gallery>> by lazy {
-        MutableLiveData<List<Gallery>>().also {
-            loadGallery()
+    private val userLive: MutableLiveData<List<User>> by lazy {
+        MutableLiveData<List<User>>().also {
+            loadUser()
         }
     }
 
-    fun getGallery(id:String): LiveData<List<Gallery>> {
+    fun getUser(id:String): LiveData<List<User>> {
         this.id = id
-        return gallery
+        return userLive
     }
 
-    private fun loadGallery() {
+    private fun loadUser() {
         viewModelScope.launch {
             var repository = MainRepository()
-            repository.getGallery(id, object : MainRepository.ResponseListener {
+            repository.getUser(id, object : MainRepository.ResponseListener {
                 override fun onSuccess(response: List<Any>) {
-                    gallery.postValue(response as List<Gallery>)
+                    userLive.postValue(response as List<User>)
                 }
+
                 override fun onFailure(message: String?) {
-                    gallery.postValue(arrayListOf())
+                    userLive.postValue(arrayListOf())
                 }
 
             })
 
         }
-    }
 
+
+    }
 }

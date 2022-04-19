@@ -1,6 +1,7 @@
 package com.app.educa.ui.activity
 
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.lifecycle.ViewModelProvider
@@ -13,12 +14,15 @@ import com.app.educa.ui.adapter.ProductAdapter
 import com.app.educa.ui.adapter.WebinarAdapter
 import com.app.educa.ui.viewmodel.GalleryViewModel
 import com.app.educa.ui.viewmodel.ProductViewModel
+import com.app.educa.ui.viewmodel.WebinarViewModel
 
 class WebinarActivity  : AppCompatActivity() {
 
     private lateinit var toolbar: Toolbar
 
     lateinit var binding: ActivityGalleryBinding
+
+    private val viewModel: ProductViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -31,10 +35,10 @@ class WebinarActivity  : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true);
         supportActionBar?.setDisplayShowHomeEnabled(true)
 
-        val galleryViewModel = ViewModelProvider(this).get(GalleryViewModel::class.java)
+        val galleryViewModel = ViewModelProvider(this).get(WebinarViewModel::class.java)
         val adapter = WebinarAdapter()
 
-        galleryViewModel.images.observe(this) {
+        galleryViewModel.webinar.observe(this) {
 
             adapter.submitList(it)
             binding.rvGallery.layoutManager = StaggeredGridLayoutManager(1, LinearLayoutManager.VERTICAL)

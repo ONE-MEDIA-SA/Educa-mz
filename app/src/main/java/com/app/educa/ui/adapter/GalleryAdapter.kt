@@ -7,16 +7,17 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.app.educa.databinding.ItemGalleryBinding
 import com.app.educa.model.Exhibitor
+import com.app.educa.model.Gallery
 import com.bumptech.glide.Glide
 
-class GalleryAdapter : ListAdapter<String, GalleryAdapter.GalleryViewHolder>(Companion) {
+class GalleryAdapter : ListAdapter<Gallery, GalleryAdapter.GalleryViewHolder>(Companion) {
 
-    companion object : DiffUtil.ItemCallback<String>() {
-        override fun areItemsTheSame(oldItem: String, newItem: String): Boolean {
+    companion object : DiffUtil.ItemCallback<Gallery>() {
+        override fun areItemsTheSame(oldItem: Gallery, newItem: Gallery): Boolean {
             return oldItem == newItem
         }
 
-        override fun areContentsTheSame(oldItem: String, newItem: String): Boolean {
+        override fun areContentsTheSame(oldItem: Gallery, newItem: Gallery): Boolean {
             return oldItem == newItem
         }
     }
@@ -32,9 +33,12 @@ class GalleryAdapter : ListAdapter<String, GalleryAdapter.GalleryViewHolder>(Com
     }
 
     override fun onBindViewHolder(holder: GalleryViewHolder, position: Int) {
-        Glide
-            .with(holder.binding.root)
-            .load(currentList[position])
-            .into(holder.binding.imgGallery)
+        if (currentList[position].type == "image") {
+            Glide
+                .with(holder.binding.root)
+                .load(currentList[position].url)
+                .into(holder.binding.imgGallery)
+        }
+
     }
 }

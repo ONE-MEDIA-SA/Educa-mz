@@ -5,9 +5,13 @@ import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
 import com.app.educa.R
 import com.app.educa.databinding.ActivityProductDetailsBinding
+import com.app.educa.model.Exhibitor
+import com.app.educa.model.Gallery
+import com.app.educa.model.Product
 import com.app.educa.ui.adapter.AdapterSlider
 import com.app.educa.ui.adapter.ProductAdapter
 import com.app.educa.ui.viewmodel.ProductViewModel
+import com.app.educa.utils.Constants
 
 class ProductDetailsActivity : AppCompatActivity() {
     lateinit var binding: ActivityProductDetailsBinding
@@ -16,18 +20,29 @@ class ProductDetailsActivity : AppCompatActivity() {
         binding = ActivityProductDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val product = intent.getSerializableExtra("product") as? Product
+
         val productViewModel = ViewModelProvider(this).get(ProductViewModel::class.java)
         val adap = ProductAdapter()
 
-        productViewModel.products.observe(this) {
+        productViewModel.getProduct(product!!.exhibitor_id).observe(this) {
             adap.submitList(it)
             binding.rvProduct.adapter = adap
         }
 
-        productViewModel.images.observe(this) {
-            binding.pager.adapter = AdapterSlider(it,this)
-            binding.dotsIndicator.setViewPager(binding.pager)
-        }
+        var listOfImages = if(product!!.images != null) product!!.images else listOf(
+            Constants.IMG_EMPTY, Constants.IMG_EMPTY)
+        binding.pager.adapter = AdapterSlider(listOfImages,this)
+        binding.dotsIndicator.setViewPager(binding.pager)
 
+        updateUI(product)
+
+    }
+
+    private fun updateUI(product: Product) {
+        binding.tvProductName.text = product.name
+        binding.tvProductQuantity.text = "Quantidade: ${product.quantity}"
+        binding.tvProductDescription.text = product.description
+        binding.tvProductPrice.text = product.getFormattedPrice()
     }
 }

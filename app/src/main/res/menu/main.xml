@@ -6,6 +6,5 @@
         android:id="@+id/action_profile"
         android:title="Icon"
         app:showAsAction="always"
-        android:icon="@drawable/profile1"
-        />
+        android:icon="@drawable/profile1" />
 </menu>
